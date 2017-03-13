@@ -31,6 +31,7 @@ Events will be an occasion for parents to meet and for kids to play with each ot
 * [ ] Remind email must be sent to user before starting day 1-2 days. 
 
 ## Optional Stories
+* [ ] Allow user can chat, send message to other user
 Please add your amazing idea to make this better ;)
 
 ## Q&A
