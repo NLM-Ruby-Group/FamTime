@@ -9,7 +9,6 @@ Events will be an occasion for parents to meet and for kids to play with each ot
 
 ## User Stories
 #### Users
-* [ ]
 * [ ] Sign Up with email, account name, encrypted password. Option to sign up with Social Network (Facebook, Google ...)
 * [ ] Sign In via email or account name are acceptable 
 * [ ] Users can give feedback for a place/oranizer 
@@ -24,6 +23,7 @@ Events will be an occasion for parents to meet and for kids to play with each ot
 * [ ] Event only be registered if number of participant is greater than 0
 * [ ] Event registration will close before starting time 1 day 
 * [ ] Event can be sorted by most viewed, event type (sport, pinic, music ...)
+* [ ] Allow user to choose location to display related event
 
 #### Notification
 * [ ] Some HOT event can be notified to users
