@@ -14,6 +14,7 @@ Events will be an occasion for parents to meet and for kids to play with each ot
 * [ ] Users can give feedback for a place/oranizer 
 * [ ] Users can set going/not going to an event
 * [ ] Users can setting up privacy information and notification email 
+* [ ] Reset password by sending email and reset password link 
 
 #### Events
 * [ ] Event creator must add their phone number to become verified
@@ -32,6 +33,7 @@ Events will be an occasion for parents to meet and for kids to play with each ot
 
 ## Optional Stories
 * [ ] Allow user can chat, send message to other user
+* [ ] Allow user to share event to social network (Facebook)
 Please add your amazing idea to make this better ;)
 
 ## Q&A
