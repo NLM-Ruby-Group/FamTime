@@ -2,14 +2,17 @@
   <a class="navbar-brand" href="/">Home</a>
   <ul class="nav navbar-nav">
     <% if current_user %>
-      <li class="nav-item">
-        <%= link_to "Logout", log_out_path, method: "delete" , class: "nav-link" %>
-      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.first_name %>
+        </a>
 
-      <li class="nav-item">
-        <%= link_to "Profile", user_path(id: current_user.id), class: "nav-link" %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item disabled">Signed in as<br><strong><%= current_user.email %></strong><hr></a> 
+          <%= link_to "Logout", log_out_path, method: "delete" , class: "dropdown-item" %>
+          <%= link_to "Profile Settings", user_path(id: current_user.id), class: "dropdown-item" %>
+        </div>
       </li>
-
     <% else %>
       <li class="nav-item">
         <%= link_to "Sign Up", new_user_path, class: "nav-link" %>

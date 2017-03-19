@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user
       if @user.authenticate(params[:password])
-        flash[:success] = "You signed in as " + @user.name
+        flash[:success] = "You signed in as " + @user.email
         session[:user_id] = @user.id
         redirect_to root_path
       else
