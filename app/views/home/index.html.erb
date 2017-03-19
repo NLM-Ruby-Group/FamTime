@@ -1,1 +1,43 @@
-<h1>Family Time</h1>
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<style>
+.mySlides {
+   position: fixed; 
+   top: 50px;
+   left: 0;
+   right: 0;
+   max-width: 100%;
+   max-height: auto;
+   margin: auto;
+   overflow: auto;
+}
+</style>
+<body>
+
+<div class="w3-content">
+  <img class="mySlides w3-animate-fading" src="<%= slide_image_url1 %>" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="<%= slide_image_url2 %>" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="<%= slide_image_url3 %>" style="width:100%">
+</div>
+
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 8000); 
+}
+</script>
+
+</body>
+</html>
