@@ -1,0 +1,24 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top" style="background-color: #52BE80;">
+  <a class="navbar-brand" href="/">Home</a>
+  <ul class="nav navbar-nav">
+    <% if current_user %>
+      <li class="nav-item">
+        <%= link_to "Logout", log_out_path, method: "delete" , class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Profile", user_path(id: current_user.id), class: "nav-link" %>
+      </li>
+
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Login", new_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
