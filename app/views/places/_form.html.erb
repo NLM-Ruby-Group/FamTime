@@ -1,0 +1,37 @@
+<h1>THIS FORM IS TO CREATE AND EDIT PLACES</h1>
+
+<%= form_for(@place) do |f| %>
+  <% if @place.errors.any? %>
+  <div>
+  <h2><%= pluralize(@place.errors.count,"error")%> prohibited this place from being saved:</h2>
+  <ul>
+    <% @place.errors.full_messages.each do |message|%>
+    <li> <%= message %> </li>
+    <% end %>
+  </ul>
+</div>
+
+<% end %>
+
+
+<div class="field">
+  <%= f.label :name%>
+  <%= f.text_field :name,:required => true%>
+</div>
+<div class="field">
+  <%= f.label :address%>
+  <%= f.text_area :address,:required => true %>
+</div>
+<div class="field">
+  <%= f.label :opening_hours%>
+  <%= f.time_field :opening_hours%>
+  <%# need to add a CLOSING HOURS IN THE DB%>
+</div>
+<div class="field">
+  <%= f.file_field :photo, :required => true%>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>
