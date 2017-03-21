@@ -35,7 +35,8 @@ Events will be an occasion for parents to meet and for kids to play with each ot
 * [ ] Allow user can chat, send message to other user
 * [ ] Allow user to share event to social network (Facebook)
 Please add your amazing idea to make this better ;)
-
+[* ] Added a max limit of 2mb for uploading place/events pictures
+ 
 ## Q&A
 - What are some examples of places to add to our website?
  > Places can be: parks, recreational centers, library, sports field.

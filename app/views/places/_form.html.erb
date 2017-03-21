@@ -1,7 +1,7 @@
 <h1>THIS FORM IS TO CREATE AND EDIT PLACES</h1>
 
-<%= form_for(@place) do |f| %>
-  <% if @place.errors.any? %>
+<%= form_for @place, html: { multipart: true } do |f| %>  
+<% if @place.errors.any? %>
   <div>
   <h2><%= pluralize(@place.errors.count,"error")%> prohibited this place from being saved:</h2>
   <ul>
@@ -10,7 +10,6 @@
     <% end %>
   </ul>
 </div>
-
 <% end %>
 
 
@@ -31,7 +30,13 @@
   <%= f.time_field :closing_hours%>
 </div>
 <div class="field">
-  <%= f.file_field :photo, :required => true%>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <% if f.object.image? %>
+      <%= image_tag f.object.image.url %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %> 
+    <% end %>
 </div>
 <div class="actions">
   <%= f.submit %>

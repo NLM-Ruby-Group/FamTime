@@ -25,7 +25,10 @@ class PlacesController < ApplicationController
   end
 
   def update
-    @place = Place.find(params[:id])
+    @place = Place.find(params[:id]) 
+    if @place.update_attributes(place_params)
+      @place.remove_image
+    end
   end
 
   def show
@@ -35,6 +38,6 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :photo, :opening_hours, :rating)
+    params.require(:place).permit(:name, :address, :image, :opening_hours, :rating,:remove_image)
   end
 end
