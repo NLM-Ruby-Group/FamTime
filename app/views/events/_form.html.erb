@@ -1,0 +1,57 @@
+<h1>THIS FORM IS TO CREATE AND EDIT eventS</h1>
+
+<%= form_for @event, html: { multipart: true } do |f| %>  
+<% if @event.errors.any? %>
+  <div>
+  <h2><%= pluralize(@event.errors.count,"error")%> prohibited this event from being saved:</h2>
+  <ul>
+    <% @event.errors.full_messages.each do |message|%>
+    <li> <%= message %> </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<div class="field">
+  <%= f.label :name%>
+  <%= f.text_field :name,:required => true%>
+</div>
+<div class="field">
+  <%= f.label :place_id%>
+  <%= f.select :place_id, Place.all.map{|e| [e.address, e.id]},:required => true %>
+</div>
+<div class="field "> 
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.all.map{|e| [e.name,e.id]} %>
+  </div>
+<div class="field">
+  <%= f.label :starts_at%>
+  <%= f.date_field :starts_at%>
+</div>
+<div class="field">
+  <%= f.label :ends_at%>
+  <%= f.date_field :ends_at%>
+</div>
+<div class="field">
+  <%= f.label :min_participants%>
+  <%= f.number_field :min_participants%>
+</div>
+<div class="field">
+  <%= f.label :max_participants%>
+  <%= f.number_field :max_participants%>
+</div>
+<div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <% if f.object.image? %>
+      <%= image_tag f.object.image.url %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %> 
+    <% end %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>
