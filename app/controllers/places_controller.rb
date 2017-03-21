@@ -1,6 +1,8 @@
 class PlacesController < ApplicationController
+  before_action :require_user, only: [:create,:edit,:update]
+  
   def index
-    @place = Place.all
+    @places = Place.all
   end
 
   def new
@@ -8,6 +10,7 @@ class PlacesController < ApplicationController
   end
 
   def create
+
     @place = Place.new place_params
     if @place.save
       redirect_to places_path

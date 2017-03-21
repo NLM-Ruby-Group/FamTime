@@ -1,1 +1,14 @@
 <h1> HERE YOU CAN SEE ALL THE EVENTS</h1>
+
+<div class="container">
+  <div class="row">
+    <% if @places.empty? %>
+      <h1>  Sorry,there are no places available, but you can start by adding one </h1>
+    <% else %>
+    <% @places.each do |g| %>
+      <%= render partial: 'card', locals: {place:g} %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
+

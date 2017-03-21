@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
       @current_user = nil
     end
   end
+
+  def require_user
+    unless current_user 
+      redirect_to new_session_path , flash: {error: "Please Log In"}
+    end
+  end
+
 end

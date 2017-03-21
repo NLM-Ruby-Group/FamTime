@@ -1,0 +1,15 @@
+<div class='col-12 col-sm-6'>
+  <%= link_to place_path(place) do %>
+    <div class="card">
+      <img src="<%= place.photo %>" alt="Image of a location" class="card-img-top">
+      <div class="card-block">
+        <h4 class="card-title"> <%= place.name %></h4>
+        <h6 class="card-subtitle"> <%= place.address %> </h6>
+        <%#
+        <p class="card-text"> <%= place.description %.</p>
+        %>
+      </div>
+    </div>
+    <% end%>
+
+</div>

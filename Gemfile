@@ -35,7 +35,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'font-kit-rails', '~> 1.2.0'
-
+gem 'carrierwave', '~> 1.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
