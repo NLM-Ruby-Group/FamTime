@@ -8,7 +8,7 @@ def index
 end
 
 def new
-   @event = current_user.events.build
+   @event = Event.new
 end
 
 def create
@@ -38,7 +38,7 @@ def show
 end
 
 def show_mine
-  @events= curren_user.events
+  @events= current_user.events
 end 
 
 def publish
@@ -51,7 +51,7 @@ end
 private 
 
 def event_params
-  params.require(:event).permit(:name, :min_participants, :max_participants, :price, :description, :starts_at, :ends_at,:is_published, :image, :image_remove, :place_id, :user_id, :category_id)
+  params.require(:event).permit(:name, :min_participants, :max_participants, :price, :description, :starts_at, :ends_at,:is_published, :image, :image_remove, :place_id,:category_id)
 end
 
 end

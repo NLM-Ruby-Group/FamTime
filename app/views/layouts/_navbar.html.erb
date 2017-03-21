@@ -1,6 +1,6 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse " style="background-color: #212121;">
   <a class="navbar-brand" href="/">
-    <img src="<%= logo_image_url %>" width="35" height="35" alt="FamTime">
+  <img src="<%= logo_image_url %>" width="35" height="35" alt="FamTime">
     FamTime
   </a>
   <ul class="nav navbar-nav">
@@ -25,6 +25,12 @@
         <%= link_to "Login", new_session_path, class: "nav-link" %>
       </li>
     <% end %>
+    <li class="nav-item">
+        <%= link_to "Places", places_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to "Events", events_path, class: "nav-link" %>
+    </li>
   </ul>
 </nav>
 

@@ -1,13 +1,15 @@
 <div class='col-12 col-sm-6'>
   <%= link_to event_path(event) do %>
     <div class="card">
-      <%= image_tag event.image.url,class:'card-img-top' %>
+      <%= image_tag event.image.url, class:'card-img-top' %>
       <div class="card-block">
         <h4 class="card-title"> <%= event.name %></h4>
-        <h6 class="card-subtitle"> <%= event.address %> </h6>
-        <%#
-        <p class="card-text"> <%= place.description %.</p>
-        %>
+        <h6 class="card-subtitle"> <%= event.place.address %> <br> <%= event.price %> <br> <%= event.starts_at%> <%= event.ends_at %> </h6>
+        
+        <p class="card-text"> Description:<%= event.description %> <br>
+        <%##Created by: <%= event.user_id  NEED TO DISPLAY THE NAME OF THE USER%>
+        </p> 
+        
       </div>
     </div>
     <% end%>

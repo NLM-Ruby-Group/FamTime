@@ -1,0 +1,14 @@
+<h1> HERE YOU CAN SEE ALL THE EVENTS</h1>
+
+<div class="container">
+  <div class="row">
+  <%= link_to 'Create an Event', new_event_path %>
+    <% if @events.empty? %>
+      <h1>  Sorry,there are no events available, but you can start by adding one </h1>
+    <% else %>
+    <% @events.each do |g| %>
+      <%= render partial: 'card', locals: {event:g} %>
+    <% end %>
+    <% end %>
+  </div>
+</div>

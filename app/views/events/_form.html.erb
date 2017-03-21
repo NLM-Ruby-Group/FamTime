@@ -26,6 +26,14 @@
     <%= f.select :category_id, Category.all.map{|e| [e.name,e.id]} %>
   </div>
 <div class="field">
+  <%= f.label :description %>
+  <%= f.text_area :description, :required => true%>
+</div>
+<div class="field">
+  <%= f.label :price %>
+  <%= f.number_field :price, :required => true%>
+</div>
+<div class="field">
   <%= f.label :starts_at%>
   <%= f.date_field :starts_at%>
 </div>
@@ -35,11 +43,11 @@
 </div>
 <div class="field">
   <%= f.label :min_participants%>
-  <%= f.number_field :min_participants%>
+  <%= f.number_field :min_participants , :value => 0%>
 </div>
 <div class="field">
   <%= f.label :max_participants%>
-  <%= f.number_field :max_participants%>
+  <%= f.number_field :max_participants, :value =>1%>
 </div>
 <div class="field">
     <%= f.label :image %><br>

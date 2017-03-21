@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   belongs_to :place
   belongs_to :category
   has_many :comments
-  validates :name,:place_id,:price, :starts_at, :ends_at, :description,presence: true
+  validates :name,:place_id,:price, :starts_at, :ends_at, :min_participants, :max_participants, :description,presence: true
   accepts_nested_attributes_for :place, :user
 
   mount_uploader :image, ImageUploader
@@ -14,7 +14,8 @@ class Event < ApplicationRecord
   validate :image_size_validation
 
   #in index we want to display only the upcoming events
-  scope :upcoming, -> {where("starts_at > (?) And is_published = (?)", Time.now, true)}
+  scope :upcoming, -> {where("starts_at > (?)", Time.now)}
+  #scope :upcoming, -> {where("starts_at > (?) And is_published = (?)", Time.now, true)}
 
   #to validate that the starting date of the event is not in the past 
   validate :start_at_cannot_be_in_the_past
