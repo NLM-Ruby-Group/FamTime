@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :events
   resources :places
   root 'home#index'
 
