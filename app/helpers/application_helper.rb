@@ -14,6 +14,10 @@ module ApplicationHelper
   def slide_image_url3
     image_path('happy3.jpg')
   end
+  
+  def default_user_image
+    image_path('default-user-image.png')
+  end
 
   #display flash messages with bootstrap stylin
   def bootstrap_class_for flash_type
@@ -27,4 +31,5 @@ module ApplicationHelper
         end
     end.join.html_safe
     end
+
 end
