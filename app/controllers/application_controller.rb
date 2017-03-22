@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
+  
+  def authenticate_user
+    if current_user.nil? 
+      redirect_to root_path 
+    end
+  end
 
   def current_user
     return @current_user if @current_user

@@ -14,4 +14,8 @@ module ApplicationHelper
   def slide_image_url3
     image_path('happy3.jpg')
   end
+  
+  def default_user_image
+    image_path('default-user-image.png')
+  end
 end
