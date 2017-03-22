@@ -1,14 +1,14 @@
-<h1> HERE YOU CAN SEE ALL THE EVENTS</h1>
-
 <div class="container">
   <div class="row">
-  <%= link_to 'Create an Event', new_event_path %>
-    <% if @events.empty? %>
-      <h1>  Sorry,there are no events available, but you can start by adding one </h1>
+  <% if @events.empty? %>
+      <h1>  Sorry,there are no events available, but you can start by <%= link_to "adding a new event", new_event_path, class: 'btn btn-outline-success'%> </h1>
     <% else %>
+      <h1>There are currently <%= @events.size %> events available.<br> You can help us by <%= link_to "adding a new event", new_event_path, class: 'btn btn-outline-success'%></h1>
     <% @events.each do |g| %>
       <%= render partial: 'card', locals: {event:g} %>
     <% end %>
     <% end %>
   </div>
 </div>
+
+

@@ -13,37 +13,37 @@
 <% end %>
 
 
-<div class="field">
+<div class='form-group'>
   <%= f.label :name%>
-  <%= f.text_field :name,:required => true%>
+  <%= f.text_field :name,:required => true, class: 'form-control'%>
 </div>
-<div class="field">
+<div class='form-group'>
   <%= f.label :address%>
-  <%= f.text_area :address,:required => true %>
+  <%= f.text_area :address,:required => true, class: 'form-control'%>
 </div>
-<div class="field">
+<div class='form-group'>
   <%= f.label :opening_hours%>
-  <%= f.time_field :opening_hours%>
+  <%= f.time_field :opening_hours, class: 'form-control'%>
 </div>
-<div class="field">
+<div class='form-group'>
   <%= f.label :closing_hours%>
-  <%= f.time_field :closing_hours%>
+  <%= f.time_field :closing_hours, class: 'form-control'%>
 </div>
-<div class="field">
+<div class='form-group'>
   <%= f.label :description %>
-  <%= f.text_area :description%>
+  <%= f.text_area :description, class: 'form-control'%>
 </div>
-<div class="field">
+<div class='form-group'>
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: 'form-control' %>
     <% if f.object.image? %>
       <%= image_tag f.object.image.url %>
       <%= f.label :remove_image %>
       <%= f.check_box :remove_image %> 
     <% end %>
 </div>
-<div class="actions">
-  <%= f.submit %>
+<div class="form-group">
+  <%= f.submit 'Create',class: 'btn btn-outline-success' %>
 </div>
 
 <% end %>

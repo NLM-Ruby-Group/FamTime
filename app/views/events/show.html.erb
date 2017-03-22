@@ -1,5 +1,6 @@
 <div class="container"> 
-<%= link_to 'Back', events_path%>
+<%= link_to 'Back', events_path,class:"btn btn-primary btn-sm"%>
+<%= link_to 'Edit', edit_event_path,class:"btn btn-info btn-sm"%>
 <div class="event-details">
   <h1> <%= @event.name %></h1>
   <%# CHANGE TO DISPLAY NAME F AUTHOR AND NOT ID%>
