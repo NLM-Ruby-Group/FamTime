@@ -31,9 +31,11 @@
     <li class="nav-item">
         <%= link_to "Events", events_path, class: "nav-link" %>
     </li>
+    <% if current_user %>
     <li class="nav-item">
       <%= link_to "My Events",show_mine_events_path, class: "nav-link" 	 %>
     </li>
+    <% end %>
   </ul>
 </nav>
 
