@@ -1,7 +1,11 @@
 @import "bootstrap";
-
+@import "variables";
 
 .card-img-top {
   max-height: 300px;
+}
+
+a {
+  text-decoration: none !important;
 }
 
