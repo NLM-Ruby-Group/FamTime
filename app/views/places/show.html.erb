@@ -1,5 +1,6 @@
 <div class="container">
-<%= link_to "Back", places_path %>
+<%= link_to "Back", places_path, class:"btn btn-primary btn-sm" %>
+<%= link_to 'Edit', edit_place_path,class:"btn btn-info btn-sm"%>
   <div class="place-details">
     <h1> <%= @place.name %></h1>
     <h6> <%= @place.address %> </h6>

@@ -30,6 +30,8 @@ def update
   @event = Event.find(params[:id])
   if @event.update_attributes(event_params)
     @event.remove_image
+    flash.now[:success] = "Event successfully update"
+    render 'show'
   end
 end
 

@@ -28,6 +28,8 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id]) 
     if @place.update_attributes(place_params)
       @place.remove_image
+      flash.now[:success] = "Event successfully update"
+    render 'show'
     end
   end
 

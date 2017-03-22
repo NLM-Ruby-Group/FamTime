@@ -1,5 +1,4 @@
-<h1>THIS FORM IS TO CREATE AND EDIT eventS</h1>
-
+<h1>THIS FORM IS TO CREATE AND EDIT EVENTS</h1>
 <%= form_for @event, html: { multipart: true } do |f| %>  
 <% if @event.errors.any? %>
   <div>
@@ -13,53 +12,53 @@
 <% end %>
 
 
-<div class="field">
+<div class="form-group">
   <%= f.label :name%>
-  <%= f.text_field :name,:required => true%>
+  <%= f.text_field :name,:required => true, class: 'form-control'%>
 </div>
-<div class="field">
+<div class="form-group">
   <%= f.label :place_id%>
-  <%= f.select :place_id, Place.all.map{|e| [e.address, e.id]},:required => true %>
+  <%= f.select :place_id, Place.all.map{|e| [e.address, e.id]},:required => true, class: 'form-control' %>
 </div>
-<div class="field "> 
+<div class="form-group "> 
     <%= f.label :category_id %>
-    <%= f.select :category_id, Category.all.map{|e| [e.name,e.id]} %>
+    <%= f.select :category_id, Category.all.map{|e| [e.name,e.id]}, class: 'form-control' %>
   </div>
-<div class="field">
+<div class="form-group">
   <%= f.label :description %>
-  <%= f.text_area :description, :required => true%>
+  <%= f.text_area :description, :required => true, class: 'form-control'%>
 </div>
-<div class="field">
+<div class="form-group">
   <%= f.label :price %>
-  <%= f.number_field :price, :required => true%>
+  <%= f.number_field :price, :required => true, class: 'form-control'%>
 </div>
-<div class="field">
+<div class="form-group">
   <%= f.label :starts_at%>
-  <%= f.date_field :starts_at%>
+  <%= f.date_field :starts_at, class: 'form-control'%>
 </div>
-<div class="field">
+<div class="form-group">
   <%= f.label :ends_at%>
-  <%= f.date_field :ends_at%>
+  <%= f.date_field :ends_at, class: 'form-control'%>
 </div>
-<div class="field">
+<div class="form-group">
   <%= f.label :min_participants%>
-  <%= f.number_field :min_participants , :value => 0%>
+  <%= f.number_field :min_participants , :value => 0, class: 'form-control'%>
 </div>
-<div class="field">
+<div class="form-group">
   <%= f.label :max_participants%>
-  <%= f.number_field :max_participants, :value =>1%>
+  <%= f.number_field :max_participants, :value =>1, class: 'form-control'%>
 </div>
-<div class="field">
+<div class="form-group">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: 'form-control' %>
     <% if f.object.image? %>
       <%= image_tag f.object.image.url %>
       <%= f.label :remove_image %>
       <%= f.check_box :remove_image %> 
     <% end %>
 </div>
-<div class="actions">
-  <%= f.submit %>
+<div class="form-group">
+  <%= f.submit'Submit', class: 'btn btn-outline-success'%>
 </div>
 
 <% end %>
