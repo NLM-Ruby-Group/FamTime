@@ -22,17 +22,26 @@ def create
   end
 end
 
-def edit
-  @event = Event.find(params[:id])
+def edit
+  @event = Event.find(params[:id])
+  unless current_user == @event.user
+    render 'show'
+    flash[:error] = "You cannot edit an event you did not create"
+  end
+  
 end
 
-def update
-  @event = Event.find(params[:id])
-  if @event.update_attributes(event_params)
-    @event.remove_image
-    flash.now[:success] = "Event successfully update"
-    render 'show'
-  end
+def update
+  @event = Event.find(params[:id])
+  unless current_user == @event.user
+    render 'show'
+    flash[:error] = "You cannot edit an event you did not create"
+  end
+  if @event.update_attributes(event_params)
+    @event.remove_image
+    flash.now[:success] = "Event successfully update"
+    render 'show'
+  end
 end
 
 def show
