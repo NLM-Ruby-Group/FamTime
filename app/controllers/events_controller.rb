@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-before_action :require_user, only: [:create, :new, :edit,:publish]
+before_action :require_user, only: [:create, :new, :edit,:update, :publish]
 
 def index
   @events = Event.upcoming

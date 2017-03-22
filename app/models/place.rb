@@ -1,6 +1,6 @@
 class Place < ApplicationRecord
   #has_many:events #no event model yet
-  validates :name,:address, presence: true, uniqueness: true
+  validates :name,:address,:description,presence: true, uniqueness: true
   validates :image, presence: true
 
   has_many :events

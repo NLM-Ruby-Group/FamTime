@@ -1,0 +1,15 @@
+<div class="container"> 
+<%= link_to 'Back', events_path%>
+<div class="event-details">
+  <h1> <%= @event.name %></h1>
+  <%# CHANGE TO DISPLAY NAME F AUTHOR AND NOT ID%>
+  <h3> Created by: <%= @event.user.first_name.to_s %> <%= @event.user.last_name.to_s %></h3>
+  <p> Date: <%= @event.starts_at %> || <%= @event.ends_at %> </p>
+  <p> Location: <%= @event.place.address %> </p>
+  <p> Price: <%= number_to_currency(@event.price, unit: 'VND ', precision: 0) %> </p>
+</div>
+  <img src="<%= @event.image %>" alt="">
+  <div class="event-description">
+    <p> <%= @event.description %> </p>
+  </div>
+</div>

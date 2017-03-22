@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :require_user, only: [:create,:edit,:update]
+  before_action :require_user, only: [:new,:create,:edit,:update]
   
   def index
     @places = Place.all
@@ -38,6 +38,6 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    params.require(:place).permit(:name, :address, :image, :opening_hours, :rating,:remove_image)
+    params.require(:place).permit(:name, :address, :image, :opening_hours, :rating,:remove_image, :description )
   end
 end

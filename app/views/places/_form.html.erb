@@ -30,6 +30,10 @@
   <%= f.time_field :closing_hours%>
 </div>
 <div class="field">
+  <%= f.label :description %>
+  <%= f.text_area :description%>
+</div>
+<div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
     <% if f.object.image? %>

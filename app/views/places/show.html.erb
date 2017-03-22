@@ -1,1 +1,15 @@
-<h1>HERE YOU SEE THE SINGLE EVENT</h1>
+<div class="container">
+<%= link_to "Back", places_path %>
+  <div class="place-details">
+    <h1> <%= @place.name %></h1>
+    <h6> <%= @place.address %> </h6>
+    <p> Opening Hours : <%= @place.opening_hours %> TO <%= @place.closing_hours %>
+    <p> Rating: <%= @place.rating %> </p>
+  </div>
+  <div class="place-description">
+    <p> <%= @place.description %> </p>
+  </div>
+
+  <img src="<%= @place.image %>" alt="">
+
+</div>
