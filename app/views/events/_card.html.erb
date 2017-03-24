@@ -3,7 +3,9 @@
 
   <div class="card">
     <div class="card-top" style='background:url(<%= event.image.url %>)'>
-      <span>  Created by: <%= link_to 'Profile',user_path(id: event.user.id) %> <%= event.user.last_name.to_s %></span>
+
+      <p>  Created by: <%= link_to event.user.first_name.to_s ,user_path(id: event.user.id) %>  <%= 
+      link_to event.user.last_name.to_s,user_path(id: event.user.id)  %></p>
       
       <button type="button" class="btn btn-primary"> Going?</button>
 

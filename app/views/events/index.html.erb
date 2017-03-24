@@ -21,19 +21,32 @@
         </div>
 
 
+        <%# ORDER EVENTS %>
+        <div class="card card-block">
+          <%= form_tag nil, method:'get' do %>
+            <% hidden_field_tag :category_id, params[:category_id] %>
+            <div class="form-inline">
+              <%= select_tag :sort_column,options_for_select([['Name','name'],['Price','price']]), class:"form-control" %>
+              <%= select_tag :sort_direction, options_for_select([['Ascending','asc'],['Descending','desc']]), class:"form-control" %>
+              <%= submit_tag "Sort", class:'btn btn-primary' %>
+            </div>
+          <% end %>
+          <div class="form-inline">
+          <%= link_to "Past Events" ,events_path(date: 'past'), class:'btn btn-default'%>
+        <%= link_to "Upcoming Events", events_path, class:'btn btn-default'%>
+</div>
+        </div>
 
+        <%# PAST EVENTS %>
+        
+          <%# end card block%>
         
         <div class="row">
-        <% if @current_category %>
-    <% @current_category.events.each do |g| %>
+       
+    <% @events.each do |g| %>
       <%= render partial: 'card', locals: {event:g} %>
       <% end %>
-    <% else @events.each do |g| %>
-      <% @events.each do |g| %>
-      <%= render partial: 'card', locals: {event:g} %>
-    <% end %>
-      <% end %>
-    <% end %>
+    
     
   </div>
 </div>

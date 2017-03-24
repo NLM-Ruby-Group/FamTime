@@ -7,11 +7,16 @@ def index
   @category = Category.all
   if params[:category_id].present?
     @current_category = Category.find(params[:category_id])
-    @events = @current_category.events
+    @events = @current_category.events.upcoming
   else
     @events = Event.upcoming
   end
-  
+    if params[:sort_column]
+      @events = @events.order("#{params[:sort_column]} #{params[:sort_direction]}")
+    end
+    if params[:date].present?
+      @events = Event.past
+    end
   #we will also need to display the past events as an archive
 end
 

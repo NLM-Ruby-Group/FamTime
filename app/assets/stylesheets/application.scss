@@ -27,13 +27,18 @@ a {
   position: relative;
 }
 
-.card-top * {
+.card-top p, .card-top button, .card-top h3 {
   position: absolute;
 }
-.card-top span, .card-top a{
+.card-top p{
+  display: inline-block;
+  min-width: 100px;
   bottom: 0;
   backrgound-color:black;
   color: white;
+}
+.card-top p a {
+  color:white;
 }
 .card-top button {
   right: 0;
