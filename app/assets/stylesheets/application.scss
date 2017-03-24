@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "variables";
 
 .card-img-top {
@@ -9,3 +10,46 @@ a {
   text-decoration: none !important;
 }
 
+
+/**
+ *
+ CARDS
+ *
+ */
+
+.card {
+  font-size: .8rem;
+}
+.card-top {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-top * {
+  position: absolute;
+}
+.card-top span, .card-top a{
+  bottom: 0;
+  backrgound-color:black;
+  color: white;
+}
+.card-top button {
+  right: 0;
+  bottom: 0;
+}
+.card-top h3 {
+  top: 0;
+  right: 0;
+  background-color: green;
+}
+.card-bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.card-info-1 *,card-info-2 * {
+  display:block;
+}

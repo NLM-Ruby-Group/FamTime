@@ -14,7 +14,8 @@ class Event < ApplicationRecord
   validate :image_size_validation
 
   #in index we want to display only the upcoming events
-  scope :upcoming, -> {where("starts_at > (?)", Time.now)}
+  scope :upcoming, -> {where("starts_at >= (?)", Time.now)}
+  scope :past, -> {where("ends_at <= (?)", Time.now)}
   #scope :upcoming, -> {where("starts_at > (?) And is_published = (?)", Time.now, true)}
 
   #to validate that the starting date of the event is not in the past 

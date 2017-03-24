@@ -4,6 +4,14 @@ before_action :require_user, only: [:create, :new, :edit,:update, :publish]
 
 def index
   @events = Event.upcoming
+  @category = Category.all
+  if params[:category_id].present?
+    @current_category = Category.find(params[:category_id])
+    @events = @current_category.events
+  else
+    @events = Event.upcoming
+  end
+  
   #we will also need to display the past events as an archive
 end
 
