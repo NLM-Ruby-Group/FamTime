@@ -55,6 +55,7 @@ def update
     flash.now[:success] = "Event successfully update"
     render 'show'
   end
+
 end
 
 def show
