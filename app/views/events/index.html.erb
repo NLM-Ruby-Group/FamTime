@@ -17,12 +17,13 @@
             <% @category.each do |category|%>
             <%= link_to category.name, events_path(category_id: category.id), class:"dropdown-item btn #{params[:category_id] == category.id.to_s ? 'btn-primary' : 'btn-secondary' }" %>
           <% end %>
+          <%= link_to 'All Events', events_path, class:'dropdown-item btn'%>
           </div>
         </div>
 
 
         <%# ORDER EVENTS %>
-        <div class="card card-block">
+        <div class="btn-group">
           <%= form_tag nil, method:'get' do %>
             <% hidden_field_tag :category_id, params[:category_id] %>
             <div class="form-inline">
@@ -32,14 +33,13 @@
             </div>
           <% end %>
           <div class="form-inline">
-          <%= link_to "Past Events" ,events_path(date: 'past'), class:'btn btn-default'%>
-        <%= link_to "Upcoming Events", events_path, class:'btn btn-default'%>
+          <%= link_to "Past Events" ,events_path(date: 'past'), class:'btn btn-secondary'%>
+        <%= link_to "Upcoming Events", events_path, class:'btn btn-secondary'%>
 </div>
         </div>
+        </div>
 
-        <%# PAST EVENTS %>
-        
-          <%# end card block%>
+
         
         <div class="row">
        
