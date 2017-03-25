@@ -4,5 +4,5 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
 
  has_many :events
- has_many :comments
+ #has_many :comments
 end

@@ -5,7 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
 
-  storage :aws # or you can comment out this line because config.storage is already :aws
+  #storage :aws # or you can comment out this line because config.storage is already :aws
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

@@ -43,12 +43,12 @@
         
         <div class="row">
        
-    <% @events.each do |g| %>
-      <%= render partial: 'card', locals: {event:g} %>
-      <% end %>
-    
-    
-  </div>
+      <% @events.each do |g| %>
+        <%= render partial: 'card', locals: {event:g} %>
+        <% end %>
+       </div> <!-- end row -->
+
+
 </div>
 
 

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :comments
+  
   resources :events do
+    resources :comments
     collection do
       get :show_mine
     end

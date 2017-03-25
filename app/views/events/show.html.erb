@@ -13,4 +13,43 @@
   <div class="event-description">
     <p> <%= @event.description %> </p>
   </div>
+
+
+<!-- CREATE COMMENTS -->
+<% if current_user %>
+  <%= form_for([@event,@event.comments.build]) do |f| %>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id, value: current_user.first_name.to_s current_user.last_name.to_s, disabled:true %>
+    <%= f.label :body %>
+    <%= f.text_area :body, class:'form-control' %>
+    <%= f.submit %>
+  <% end %> <!-- end form-->
+
+<% else %>
+  <%= link_to 'To comment, please log in', new_session_path %>
+<% end %> <!-- end if -->
+
+
+
+<!-- DISPLAY COMMENTS -->
+<div class="row">
+<% if @comments.empty? %>
+      <p> No comments </p>
+<% else %>        
+      <% @comments.each do |comment| %>
+      <div class="card card-block">
+      <div class="card-title">
+        <p> Username </p>
+      </div>
+        <div class="card-description">
+          <%= comment.body %>
+        </div>
+      </div>
+          
+        <% end %>
+<% end %>
+</div> <!-- end row -->
+
+
+
 </div>

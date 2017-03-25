@@ -1,5 +1,5 @@
 <div class='col-12 col-sm-6'>
-  <%= link_to event_path(event) do %>
+   <%= link_to event_path(event) do %>
 
   <div class="card">
     <div class="card-top" style='background:url(<%= event.image.url %>)'>
@@ -11,7 +11,7 @@
 
       <h3> <%= number_to_currency(event.price, unit: 'VND ', precision: 0) %></h3>
       
-    </div>
+    </div> <!-- end card-top -->
 
     <div class="card-bottom">
       <div class="card-info-1">
@@ -25,10 +25,9 @@
          </p>
          
       </div>
-    </div>
+    </div> <!-- end card-bottom -->
   
-  </div>
-
+  </div> <!-- end card -->
 
     <% end %>
 
