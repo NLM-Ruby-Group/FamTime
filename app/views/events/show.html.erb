@@ -18,10 +18,18 @@
 <!-- CREATE COMMENTS -->
 <% if current_user %>
   <%= form_for([@event,@event.comments.build]) do |f| %>
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id, value: current_user.first_name.to_s current_user.last_name.to_s, disabled:true %>
+  <div class="form-group">
+    <%= f.label :first_name%>
+    <%= f.text_field :first_name, :value => current_user.first_name.to_s,class:'form-inline',:readonly => true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :last_name, :value => current_user.last_name.to_s, class:'form-inline', :readonly => true%>
+  </div>
+  <div class="form-group">
     <%= f.label :body %>
     <%= f.text_area :body, class:'form-control' %>
+  </div>
     <%= f.submit %>
   <% end %> <!-- end form-->
 
@@ -39,7 +47,7 @@
       <% @comments.each do |comment| %>
       <div class="card card-block">
       <div class="card-title">
-        <p> Username </p>
+        <p> Username: <%= comment.first_name %> <%= comment.last_name %></p>
       </div>
         <div class="card-description">
           <%= comment.body %>
