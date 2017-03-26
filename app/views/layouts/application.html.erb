@@ -12,16 +12,13 @@
     <!--    <%=  flash_messages %>-->  
     <div class="container">
       <%= yield %>
+			
+			<hr>
+    	<footer>
+				<p>&copy; FamTime From NLM Group 2017</p>
+    	</footer>
     </div>
   </body>
 
 </html>
-
-<script>
-window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-        $(this).remove(); 
-    });
-}, 2000);
-<script/>
 

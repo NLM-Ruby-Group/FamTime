@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
-<style>
-.mySlides {
-   position: fixed; 
-   top: 50px;
-   left: 0;
-   right: 0;
-   max-width: 100%;
-   max-height: auto;
-   margin: auto;
-   overflow: auto;
-}
-</style>
 <body>
-  <div class="w3-content">
-    <img class="mySlides w3-animate-fading" src="<%= slide_image_url1 %>" style="width:100%">
-    <img class="mySlides w3-animate-fading" src="<%= slide_image_url2 %>" style="width:100%">
-    <img class="mySlides w3-animate-fading" src="<%= slide_image_url3 %>" style="width:100%">
-  </div>
 
-<div class="container-fluid events-list">
-  <% @upcoming_events.in_groups_of(3) do |g| %>
-    <div class="row">
-      <% g.compact.each do |e| %>
-        <%= render partial: 'card', locals: {event: e} %>
+  <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-12 col-md-9">
+      <div class="jumbotron">
+        <h1>Family Time</h1>
+        <p>Let your kids enjoy our events!</p>
+      </div>
+
+      <% @upcoming_events.in_groups_of(3) do |g| %>
+        <div class="row">
+          <% g.compact.each do |e| %>
+            <%= render partial: 'card', locals: {event: e} %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  <% end %>
-</div>
+
+    <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+      <div class="list-group">
+        <a href="#" class="list-group-item active">Some hot events</a>
+        <a href="#" class="list-group-item">Event 1</a>
+        <a href="#" class="list-group-item">Event 2</a>
+        <a href="#" class="list-group-item">Event 3</a>
+        <a href="#" class="list-group-item">Event 4</a>
+        <a href="#" class="list-group-item">Event 5</a>
+        <a href="#" class="list-group-item">Event 6</a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
-
-<script>
-var slideIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1} 
-    x[slideIndex-1].style.display = "block"; 
-    setTimeout(carousel, 8000); 
-}
-</script>
 
