@@ -1,3 +1,23 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.events-list {
+    margin-top: 20px;
+    padding: 30px 150px;
+    background-color: $gray-lighter;
+    .card {
+        margin-bottom: 20px;
+        img {
+            max-width: 100%;
+        }
+        &:hover {
+            box-shadow: 0 0 8px $gray;
+            transition: 0.5s;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $gray-dark;
+    }
+}

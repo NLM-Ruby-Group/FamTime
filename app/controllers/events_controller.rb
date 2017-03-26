@@ -4,6 +4,7 @@ before_action :require_user, only: [:create, :new, :edit,:update, :publish]
 
 def index
   @events = Event.upcoming
+  @all_events = Event.all
   #we will also need to display the past events as an archive
 end
 
