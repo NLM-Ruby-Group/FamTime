@@ -41,19 +41,18 @@
 
 <!-- DISPLAY COMMENTS -->
 <div class="row">
-<% if @comments.empty? %>
+<% unless @comments.any? %>
       <p> No comments </p>
 <% else %>        
       <% @comments.each do |comment| %>
-      <div class="card card-block">
+      <div class="card col-12 card-block">
       <div class="card-title">
-        <p> Username: <%= comment.first_name %> <%= comment.last_name %></p>
+        <p> <%= comment.first_name %> <%= comment.last_name %></p>
       </div>
         <div class="card-description">
           <%= comment.body %>
         </div>
       </div>
-          
         <% end %>
 <% end %>
 </div> <!-- end row -->

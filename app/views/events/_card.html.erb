@@ -1,19 +1,18 @@
 <div class='col-12 col-sm-6'>
-   <%= link_to event_path(event) do %>
+   
 
   <div class="card">
+  
     <div class="card-top" style='background:url(<%= event.image.url %>)'>
-
       <p>  Created by: <%= link_to event.user.first_name.to_s ,user_path(id: event.user.id) %>  <%= 
       link_to event.user.last_name.to_s,user_path(id: event.user.id)  %></p>
-      
       <button type="button" class="btn btn-primary"> Going?</button>
-
       <h3> <%= number_to_currency(event.price, unit: 'VND ', precision: 0) %></h3>
-      
     </div> <!-- end card-top -->
 
+    <%= link_to event_path(event) do %>
     <div class="card-bottom">
+    
       <div class="card-info-1">
         <h1> <%= event.name %></h1>
         <p> <%= event.place.address %>
@@ -32,6 +31,5 @@
     <% end %>
 
 </div>
-
 
 
