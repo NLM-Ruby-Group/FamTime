@@ -15,11 +15,11 @@
 }
 </style>
 <body>
-<div class="w3-content">
-  <img class="mySlides w3-animate-fading" src="<%= slide_image_url1 %>" style="width:100%">
-  <img class="mySlides w3-animate-fading" src="<%= slide_image_url2 %>" style="width:100%">
-  <img class="mySlides w3-animate-fading" src="<%= slide_image_url3 %>" style="width:100%">
-</div>
+  <div class="w3-content">
+    <img class="mySlides w3-animate-fading" src="<%= slide_image_url1 %>" style="width:100%">
+    <img class="mySlides w3-animate-fading" src="<%= slide_image_url2 %>" style="width:100%">
+    <img class="mySlides w3-animate-fading" src="<%= slide_image_url3 %>" style="width:100%">
+  </div>
 
 <div class="container-fluid events-list">
   <% @upcoming_events.in_groups_of(3) do |g| %>

@@ -1,5 +1,7 @@
 @import "bootstrap";
+@import "home.scss";
 @import "variables";
+
 
 .card-img-top {
   max-height: 300px;
@@ -8,4 +10,3 @@
 a {
   text-decoration: none !important;
 }
-
