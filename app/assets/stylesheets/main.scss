@@ -2,6 +2,9 @@
 @import "home.scss";
 @import "variables";
 
+.featurette-divider {
+  margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+}
 
 .card-img-top {
   max-height: 300px;
