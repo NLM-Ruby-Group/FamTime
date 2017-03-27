@@ -1,6 +1,7 @@
+@import "variables";
 @import "bootstrap";
 @import "font-awesome";
-@import "variables";
+
 
 .card-img-top {
   max-height: 300px;
@@ -9,8 +10,15 @@
 a {
   text-decoration: none !important;
 }
-
-
+.container {
+  padding-top: 1rem;
+}
+* {
+  color: $color_font;
+}
+body,.container {
+  background-color: $color_background;
+}
 /**
  *
  CARDS
@@ -55,6 +63,47 @@ a {
   justify-content: space-between;
 
 }
-.card-info-1 *,card-info-2 * {
+.card-info-1 *,.card-info-2 * {
   display:block;
+}
+
+
+
+
+
+///PLACE SHOW/ EVENT SHOW
+.place-container .row,.event-container .row {
+  margin-top: 2rem;
+}
+.place-container img, .event-container img {
+  width: 100%;
+}
+
+
+
+
+//style comment cards
+#comment-form-card{
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+} 
+#comment-form-card input {
+  border: none !important;
+  width: auto;
+  display: inline;
+}
+
+
+#comment-form-card.card-description {
+  margin-top: 2rem;
+}
+#comment-form-card .btn {
+  margin-top: 1rem;
+}
+
+.comment-display-card {
+  margin-top: 2rem;
+  height: auto;
+  padding: 1rem !important;
 }

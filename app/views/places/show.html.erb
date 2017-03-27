@@ -1,16 +1,28 @@
 <div class="container">
 <%= link_to "Back", places_path, class:"btn btn-primary btn-sm" %>
 <%= link_to 'Edit', edit_place_path,class:"btn btn-info btn-sm"%>
-  <div class="place-details">
-    <h1> <%= @place.name %></h1>
-    <h6> <%= @place.address %> </h6>
-    <p> Opening Hours : <%= @place.opening_hours %> TO <%= @place.closing_hours %>
-    <p> Rating: <%= @place.rating %> </p>
-  </div>
-  <div class="place-description">
-    <p> <%= @place.description %> </p>
-  </div>
 
-  <img src="<%= @place.image %>" alt="">
+
+<div class="place-container">
+  <div class="row ">
+    <div class="col-12 col-sm-6">
+        <img src="<%= @place.image %>" alt="">
+     </div>
+    <div class="col-12 col-sm-6">
+       <h1> <%= @place.name %></h1>
+    <h6> <%= @place.address %> </h6>
+    <p> Opening Hours : <%= @place.opening_hours.strftime("%H : %M") %> TO <%= @place.closing_hours.strftime("%H : %M") %>
+  </div>
+  </div>
+<div class="row">
+  <div class="col-12">
+    <%= @place.description %>  
+  </div>
 
 </div>
+
+</div>
+
+
+
+

@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   #storage :aws # or you can comment out this line because config.storage is already :aws
   # storage :fog
-
+  storage :file
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
