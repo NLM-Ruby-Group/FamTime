@@ -9,9 +9,7 @@
   margin: 3rem 0; /* Space out the Bootstrap <hr> more */
 }
 
-.card-img-top {
-  max-height: 300px;
-}
+
 
 a {
   text-decoration: none !important;
@@ -21,6 +19,7 @@ a {
 }
 * {
   color: $color_font;
+  font-family: 'Roboto', sans-serif;
 }
 body,.container {
   background-color: $color_background;
@@ -33,6 +32,7 @@ body,.container {
 
 .card {
   font-size: .8rem;
+  margin-top: 1rem;
 }
 .card-top {
   height: 300px;
@@ -40,7 +40,9 @@ body,.container {
   background-position: center;
   position: relative;
 }
-
+.card-img-top {
+  max-height: 300px;
+}
 .card-top p, .card-top button, .card-top h3 {
   position: absolute;
 }
@@ -112,4 +114,22 @@ body,.container {
   margin-top: 2rem;
   height: auto;
   padding: 1rem !important;
+}
+
+
+
+///EVENT INDEX PAGE
+.event-buttons {
+  margin-bottom: 1rem;
+}
+
+
+
+//EVENT AND PLACES form
+.form-inline label {
+  margin-right: 1rem;
+}
+
+.form-group label {
+  font-weight: bold;
 }

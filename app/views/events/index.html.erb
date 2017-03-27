@@ -1,15 +1,19 @@
 <div class="container">
   <div class="row">
-  <% if @events.empty? %>
+  <div class="col-12">
+    <% if @events.empty? %>
       <h1>  Sorry,there are no events available, but you can start by <%= link_to "adding a new event", new_event_path, class: 'btn btn-outline-success'%> </h1>
-    <% else %>
+      <% else %>
       <h1>There are currently <%= @events.size %> events available.<br> You can help us by <%= link_to "adding a new event", new_event_path, class: 'btn btn-outline-success'%></h1>
     <% end %>
+  </div> <!-- end col -->
 </div> <%#end row%>
 
 
 <%#CATEGORIES%>
-       <div class="btn-group" role="group">
+<div class="row event-buttons">
+  <div class="col-12">
+     <div class="btn-group" role="group">
     <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Categories
     </button>
@@ -19,7 +23,7 @@
           <% end %>
           <%= link_to 'All Events', events_path, class:'dropdown-item btn'%>
           </div>
-        </div>
+        </div> <!-- end btn group-->
 
 
         <%# ORDER EVENTS %>
@@ -36,7 +40,11 @@
           <%= link_to "Past Events" ,events_path(date: 'past'), class:'btn btn-secondary'%>
           <%= link_to "Upcoming Events", events_path, class:'btn btn-secondary'%>
         </div>
-        </div>
+        </div> <!-- end btn group -->
+  
+  </div> <!-- end col -->
+</div> <!-- end row -->
+      
 
 
 
