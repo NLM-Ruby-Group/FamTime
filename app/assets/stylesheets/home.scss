@@ -54,7 +54,7 @@ body {
 	text-align: center;
 }
 
--------------------------------------------------- */
+/*  -------------------------------------------------- */
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */
@@ -75,3 +75,9 @@ body {
   }
 }
 
+
+
+/* to verwrite the color of the container set in the application.scss */
+.carousel .container {
+  background: none !important;
+}
