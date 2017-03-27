@@ -17,6 +17,8 @@ def index
     if params[:date].present?
       @events = Event.past
     end
+  @all_events = Event.all
+
   #we will also need to display the past events as an archive
 end
 
