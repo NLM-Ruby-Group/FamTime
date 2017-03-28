@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   validates :name,:place_id,:price, :starts_at, :ends_at, :min_participants, :max_participants, :description,presence: true
   accepts_nested_attributes_for :place, :user, :comments
 
-  mount_uploader :image, ImageUploader
+  mount_uploaders :image, ImageUploader
 
   validates_processing_of :image
   validate :image_size_validation

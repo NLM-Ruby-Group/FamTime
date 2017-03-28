@@ -8,7 +8,8 @@
 <div class="event-container">
   <div class="row">
     <div class="col-12 col-lg-6">
-        <img src="<%= @event.image %>" alt="">
+
+    <img src="<%= @event.image[0].url %>" alt="">
     </div> <!-- end first col -->
     <div class="col-12 col-lg-6">
         <h1> <%= @event.name %></h1>
@@ -23,16 +24,22 @@
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDIsg0eCEGjTAi7K-fk_3V13ZUa4fPf6qI&q=<%= @event.place.address.tr(" ","+")%>,ho+chi">
 </iframe>
 
-
     </div> <!-- end second col-->
   </div> <!-- end first row-->
+  <div class="row"> 
+   <%= @event.image.each do |image| %>
+      <div class="col-6 col-lg-3">
+        <img src="<%= image.url %>" alt="">
+      </div>
+  <% end %>
+  </div> <!-- end row w images -->
 
 <div class="row">
   <div class="col-12">
       <p> <%= @event.description %> </p>
   </div>
 
-</div> <!-- end second row-->
+</div> <!-- end row-->
 <div class="row">
   <div class="col-12">
 
