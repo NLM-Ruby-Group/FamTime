@@ -39,7 +39,8 @@ end
 
 def edit
   @event = Event.find(params[:id])
-  unless current_user == @event.user
+  @comments = @event.comments
+    unless current_user == @event.user
     render 'show'
     flash[:error] = "You cannot edit an event you did not create"
   end
@@ -48,16 +49,18 @@ end
 
 def update
   @event = Event.find(params[:id])
+  @comments = @event.comments
   unless current_user == @event.user
     render 'show'
     flash[:error] = "You cannot edit an event you did not create"
   end
   if @event.update_attributes(event_params)
     @event.remove_image
-    flash.now[:success] = "Event successfully update"
-    render 'show'
+    if @event.image.present?
+      flash.now[:success] = "Event successfully update"
+      render 'show'
+    end
   end
-
 end
 
 def show
@@ -69,6 +72,8 @@ def show_mine
   @events= current_user.events
 end 
 
+
+#still not implemented
 def publish
   @event = Event.find(params[:id])
   @event.update_attributes(:is_published => true)
@@ -79,7 +84,7 @@ end
 private 
 
 def event_params
-  params.require(:event).permit(:name, :min_participants, :max_participants, :price, :description, :starts_at, :ends_at,:is_published, :image, :image_remove, :place_id,:category_id)
+  params.require(:event).permit(:name, :min_participants, :max_participants, :price, :description, :starts_at, :ends_at,:is_published, :image, :remove_image, :place_id,:category_id)
 end
 
 end

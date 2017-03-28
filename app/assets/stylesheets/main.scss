@@ -2,6 +2,7 @@
 @import "variables";
 @import "bootstrap";
 @import "home.scss";
+@import "cards.scss";
 @import "font-awesome";
 
 
@@ -24,97 +25,8 @@ a {
 body,.container {
   background-color: $color_background;
 }
-/**
- *
- CARDS
- *
- */
-
-.card {
-  font-size: .8rem;
-  margin-top: 1rem;
-}
-.card-top {
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.card-img-top {
-  max-height: 300px;
-}
-.card-top p, .card-top button, .card-top h3 {
-  position: absolute;
-}
-.card-top p{
-  display: inline-block;
-  min-width: 100px;
-  bottom: 0;
-  backrgound-color:black;
-  color: white;
-}
-.card-top p a {
-  color:white;
-}
-.card-top button {
-  right: 0;
-  bottom: 0;
-}
-.card-top h3 {
-  top: 0;
-  right: 0;
-  background-color: green;
-}
-.card-bottom{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-}
-.card-info-1 *,.card-info-2 * {
-  display:block;
-}
 
 
-
-
-
-///PLACE SHOW/ EVENT SHOW
-.place-container .row,.event-container .row {
-  margin-top: 2rem;
-}
-.place-container img, .event-container img {
-  width: 100%;
-}
-
-
-
-
-//style comment cards
-#comment-form-card{
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 2rem;
-} 
-#comment-form-card input {
-  border: none !important;
-  width: auto;
-  display: inline;
-}
-
-
-#comment-form-card.card-description {
-  margin-top: 2rem;
-}
-#comment-form-card .btn {
-  margin-top: 1rem;
-}
-
-.comment-display-card {
-  margin-top: 2rem;
-  height: auto;
-  padding: 1rem !important;
-}
 
 
 
@@ -132,4 +44,16 @@ body,.container {
 
 .form-group label {
   font-weight: bold;
+}
+
+.form-group img {
+  width: 100%;
+}
+
+.form-group select {
+  background: transparent;
+  border: none;
+  padding: 5px;
+  background-color: $color_background_light;
+
 }

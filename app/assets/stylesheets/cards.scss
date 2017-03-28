@@ -1,0 +1,110 @@
+@import "variables";
+
+
+.card {
+  font-size: .8rem;
+  margin-top: 1rem;
+}
+.card a {
+  color: $color_font;
+}
+.card-event:hover {
+  background-color: transparentize($color_font,.8);
+}
+.card-top {
+  height: 300px;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+}
+.card-img-top {
+  max-height: 300px;
+}
+.card-user-icon, .card-event-price, .card-event-button {
+  position: absolute;
+}
+
+.card-event-button {
+  right: 0;
+  bottom: 0;
+}
+
+.card-event-price {
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  background-color: transparentize($color_font,.5);
+  color: $color_background;
+}
+
+
+//user icon on the cards 
+.card-user-icon {
+  position: absolute;
+  bottom: .5rem;
+  left: 1rem;
+  display: block;
+  width: 60px;
+  
+  }
+.card-user-icon img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+
+.card-bottom{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-info-1 *,.card-info-2 * {
+  display:flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+} 
+.card i {
+  font-size: 1.5rem;
+  margin-right: .5rem;
+}
+
+
+
+
+///PLACE SHOW/ EVENT SHOW
+.place-container .row,.event-container .row {
+  margin-top: 2rem;
+}
+.place-container img, .event-container img {
+  width: 100%;
+}
+
+
+
+
+//style comment cards
+#comment-form-card{
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+} 
+#comment-form-card input {
+  border: none !important;
+  width: auto;
+  display: inline;
+}
+
+
+#comment-form-card.card-description {
+  margin-top: 2rem;
+}
+#comment-form-card .btn {
+  margin-top: 1rem;
+}
+
+.comment-display-card {
+  margin-top: 2rem;
+  height: auto;
+  padding: 1rem !important;
+}

@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
-    <% if @places.empty? %>
+    
     <div class="col-12">
+    <% if @places.empty? %>
+    
       <h1>  Sorry,there are no locations available, but you can start by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%> </h1>
     </div>
       
