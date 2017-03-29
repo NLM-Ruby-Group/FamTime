@@ -59,10 +59,13 @@
 <div class="form-group form-inline">
     <%= f.label :image %><br>
     <%= f.file_field :image, class: 'form-control', multiple: true %>
+    <%#  DISPLAY EACH IMAGE AND TICK TO REMOVE ALL, unfortunately cannot remove single image %>
     <% if f.object.image? %>
-      <%= image_tag f.object.image.url %>
-      <%= f.label :remove_image %>
-      <%= f.check_box :remove_image %> 
+      <% f.object.image.each do |ff| %>
+        <%= image_tag ff.url %>
+      <% end %>
+      <%#<%= f.label :remove_image %>
+      <%#<%= f.check_box :remove_image %> 
     <% end %>
 </div>
 <div class="form-group">
