@@ -6,9 +6,7 @@
 <div class="place-container">
   <div class="row ">
     <div class="col-12 col-lg-6">
-        <% @place.image.each do |image| %>
-        <img src="<%=image %>" alt="">
-    <% end %>
+        <img src="<%= @place.image[0].url %>" alt="">
      </div>
     <div class="col-12 col-lg-6">
        <h1> <%= @place.name %></h1>
@@ -20,19 +18,22 @@
 </iframe>
   </div>
   </div> <!-- end row -->
-<div class="row">
-  <div class="col-12">
-    <%= @place.description %>  
-  </div>
+
 
   <div class="row"> 
-   <%= @place.image.each do |image| %>
+   <% @place.image.each do |image| %>
       <div class="col-6 col-lg-3">
         <img src="<%= image.url %>" alt="">
       </div>
   <% end %>
   </div> <!-- end row w images -->
 
+
+<div class="row">
+  <div class="col-12">
+    <%= @place.description %>  
+  </div>
+  </div> <!-- end row for description -->
 
 </div>
 

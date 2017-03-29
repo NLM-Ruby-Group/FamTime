@@ -1,5 +1,6 @@
 <div class='col-12 col-lg-6'>
   <%= link_to place_path(place) do %>
+
   <div class="card">
     <img class="card-img-top" src="<%= place.image[0].url %>">
     <div class="card-block">
@@ -13,6 +14,7 @@
       <p class="card-text">
       <%= place.description %>
       </p>
+
     </div>
   </div>
   <% end%>

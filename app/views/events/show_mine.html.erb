@@ -3,7 +3,7 @@
 
   <div class="row">
     <% @events.each do |g| %>
-      <%= render partial: 'card', locals: {event:g} %>
+      <%= render partial: 'card_mine', locals: {event:g} %>
     <% end  %>
   
   </div>

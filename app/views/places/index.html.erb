@@ -15,12 +15,10 @@
     </div> <!-- end row -->
 
     <div class="row">
-        <div class="col-12">
-            <% @places.each do |g| %>
-      <%= render partial: 'card', locals: {place:g} %>
-    
+      <% @places.each do |g| %>
+        <%= render partial: 'card', locals: {place:g} %>
     <% end %>
-        </div>
+
     </div> <!-- end row -->
     
   </div> <!-- end container -->
