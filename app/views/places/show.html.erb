@@ -18,10 +18,7 @@
 </iframe>
   </div>
   </div> <!-- end row -->
-<div class="row">
-  <div class="col-12">
-    <%= @place.description %>  
-  </div>
+
 
   <div class="row"> 
    <% @place.image.each do |image| %>
@@ -31,6 +28,12 @@
   <% end %>
   </div> <!-- end row w images -->
 
+
+<div class="row">
+  <div class="col-12">
+    <%= @place.description %>  
+  </div>
+  </div> <!-- end row for description -->
 
 </div>
 

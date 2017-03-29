@@ -1,7 +1,9 @@
 <div class="container"> 
 <%= link_to 'Back', events_path,class:"btn btn-primary btn-sm"%>
-<%= link_to 'Edit', edit_event_path ,class:"btn btn-info btn-sm"%>
 
+<% if current_user == @event.user %>
+  <%= link_to 'Edit', edit_event_path ,class:"btn btn-info btn-sm"%>
+<% end %>
 
 
 
