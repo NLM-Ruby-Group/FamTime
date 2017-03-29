@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170322022127) do
+ActiveRecord::Schema.define(version: 20170328101231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20170322022127) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "first_name"
+    t.text     "last_name"
     t.index ["event_id"], name: "index_comments_on_event_id", using: :btree
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
@@ -43,9 +45,9 @@ ActiveRecord::Schema.define(version: 20170322022127) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "is_published"
-    t.string   "image"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.text     "image",            default: [],              array: true
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
     t.index ["place_id"], name: "index_events_on_place_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
@@ -54,11 +56,11 @@ ActiveRecord::Schema.define(version: 20170322022127) do
   create_table "places", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
-    t.string   "image"
+    t.text     "image",         default: [],              array: true
     t.time     "opening_hours"
     t.float    "rating"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.time     "closing_hours"
     t.text     "description"
   end
@@ -69,7 +71,7 @@ ActiveRecord::Schema.define(version: 20170322022127) do
     t.string   "last_name"
     t.text     "address"
     t.string   "password_digest"
-    t.binary   "photo"
+    t.text     "photo"
     t.string   "tel"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

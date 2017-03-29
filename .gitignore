@@ -1,4 +1,5 @@
 .DS_Store
+public/uploads
 *.swp
 *.rbc
 capybara-*.html
@@ -13,6 +14,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+/public/uploads
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 #config/initializers/secret_token.rb
@@ -42,3 +44,5 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+

@@ -1,8 +1,14 @@
-<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse " style="background-color: #212121;">
+<!-- <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse " style="background-color: #212121;"> --> 
+<nav class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <a class="navbar-brand" href="/">
     <img src="<%= logo_image_url %>" width="35" height="35" alt="FamTime">
     FamTime
   </a>
+
+  <!-- Navigation on left -->
   <ul class="nav navbar-nav ml-auto">
     <% if current_user %>
       <li class="dropdown">
@@ -18,20 +24,21 @@
         </div>
       </li>
     <% else %>
-      <li class="nav-item">
-        <%= link_to "Sign Up", new_user_path, class: "nav-link" %>
-      </li>
 
-      <li class="nav-item">
-        <%= link_to "Login", new_session_path, class: "nav-link" %>
-      </li>
-    <% end %>
-    <li class="nav-item">
-      <%= link_to "Places", places_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Events", events_path, class: "nav-link" %>
-    </li>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <!-- right aligment -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><%= link_to "Sign Up", new_user_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Events", events_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Places", places_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Login", new_session_path, class: "nav-link" %></li>
+        </ul>
+    <%end%>
+        <!-- Search form -->
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
   </ul>
 </nav>
-

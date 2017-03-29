@@ -1,0 +1,59 @@
+
+@import "variables";
+@import "bootstrap";
+@import "home.scss";
+@import "cards.scss";
+@import "font-awesome";
+
+
+.featurette-divider {
+  margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+
+
+a {
+  text-decoration: none !important;
+}
+.container {
+  padding-top: 1rem;
+}
+* {
+  color: $color_font;
+  font-family: 'Roboto', sans-serif;
+}
+body,.container {
+  background-color: $color_background;
+}
+
+
+
+
+
+///EVENT INDEX PAGE
+.event-buttons {
+  margin-bottom: 1rem;
+}
+
+
+
+//EVENT AND PLACES form
+.form-inline label {
+  margin-right: 1rem;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group img {
+  width: 100%;
+}
+
+.form-group select {
+  background: transparent;
+  border: none;
+  padding: 5px;
+  background-color: $color_background_light;
+
+}

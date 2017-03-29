@@ -1,16 +1,43 @@
 <div class="container">
 <%= link_to "Back", places_path, class:"btn btn-primary btn-sm" %>
 <%= link_to 'Edit', edit_place_path,class:"btn btn-info btn-sm"%>
-  <div class="place-details">
-    <h1> <%= @place.name %></h1>
+
+
+<div class="place-container">
+  <div class="row ">
+    <div class="col-12 col-lg-6">
+        <% @place.image.each do |image| %>
+        <img src="<%=image %>" alt="">
+    <% end %>
+     </div>
+    <div class="col-12 col-lg-6">
+       <h1> <%= @place.name %></h1>
     <h6> <%= @place.address %> </h6>
-    <p> Opening Hours : <%= @place.opening_hours %> TO <%= @place.closing_hours %>
-    <p> Rating: <%= @place.rating %> </p>
+    <p> Opening Hours : <%= @place.opening_hours.strftime("%H : %M") %> TO <%= @place.closing_hours.strftime("%H : %M") %> </p>
+    <iframe
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDIsg0eCEGjTAi7K-fk_3V13ZUa4fPf6qI&q=<%= @place.address.tr(" ","+")%>,ho+chi">
+</iframe>
   </div>
-  <div class="place-description">
-    <p> <%= @place.description %> </p>
+  </div> <!-- end row -->
+<div class="row">
+  <div class="col-12">
+    <%= @place.description %>  
   </div>
 
-  <img src="<%= @place.image %>" alt="">
+  <div class="row"> 
+   <%= @place.image.each do |image| %>
+      <div class="col-6 col-lg-3">
+        <img src="<%= image.url %>" alt="">
+      </div>
+  <% end %>
+  </div> <!-- end row w images -->
+
 
 </div>
+
+</div>
+
+
+
+

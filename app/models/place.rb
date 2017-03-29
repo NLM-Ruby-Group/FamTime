@@ -5,7 +5,7 @@ class Place < ApplicationRecord
 
   has_many :events
 
-  mount_uploader :image, ImageUploader
+  mount_uploaders :image, ImageUploader
 
   validates_processing_of :image
   validate :image_size_validation

@@ -1,18 +1,53 @@
-<div class='col-12 col-sm-6'>
-  <%= link_to event_path(event) do %>
-    <div class="card">
-      <%= image_tag event.image.url, class:'card-img-top' %>
-      <div class="card-block">
-        <h4 class="card-title"> <%= event.name %></h4>
-        <h6 class="card-subtitle"> <%= event.place.address %> <br> 
-        <%= number_to_currency(event.price, unit: 'VND ', precision: 0) %><br> <%= event.starts_at.strftime("%F")%> ||<%= event.ends_at.strftime("%F") %> </h6>
-        
-        <%#<p class="card-text"> Description:<%= event.description %> <br>
-         <h3> Created by: <%= event.user.first_name.to_s %> <%= event.user.last_name.to_s %></h3>
-        </p> 
+<div class='col-12 col-lg-6'>
+
+  <div class="card card-event">
+  
+    <div class="card-top" style='background:url(<%= event.image[0].url %>)'>
+     
+
+
+    <!-- display user icon that links to his profile -->
+     <a class='card-user-icon' href='<%= user_path(id: event.user.id)%>'>
+        <img src='<%= event.user.photo.nil? ? default_user_image :  event.user.photo %>'> 
+     </a>
+      
+      <button type="button" class="btn btn-primary card-event-button"> Going?</button>
+      <span class='card-event-price'> 
+        <%= number_to_currency(event.price, unit: 'VND ', precision: 0) %>
+      </span>
+    </div> <!-- end card-top -->
+
+    <%= link_to event_path(event) do %>
+    <div class="card-bottom">
+    
+      <div class="card-info-1">
+        <h1> <%= event.name %></h1>
+        <!-- create a link to gmaps -->
         
       </div>
-    </div>
-    <% end%>
+      <div class="card-info-2">
+      <p> 
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <a href='http://maps.google.com/?q= <%= event.place.address %>'> 
+          <%= event.place.address %> 
+          </a>
+        </p>
+        <h6> 
+          <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+          <span><%= event.starts_at.strftime("%F")%> ||<%= event.ends_at.strftime("%F") %></span>
+        </h6>   
+        <p> 
+          <span><i class="fa fa-user" aria-hidden="true"></i></span>
+          <span><%= event.min_participants %> -- <%= event.max_participants %></span>
+        </p>
+         
+      </div>
+    </div> <!-- end card-bottom -->
+  
+  </div> <!-- end card -->
+
+    <% end %>
 
 </div>
+
+
