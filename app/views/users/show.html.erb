@@ -1,4 +1,3 @@
-<title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -8,57 +7,88 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
 .w3-third img:hover{opacity: 1}
 </style>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
+<div class="w3-light-grey w3-content" style="max-width:1600px">
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
-  <img src="<%= @user.photo %>" style="width:300px; height:400px">
-  <h3 class="w3-padding-64 w3-center"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">SETTING</a> 
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">MY EVENTS</a>
-</nav>
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold;padding-top:30px;" id="mySidebar"><br>
+    <img src="<%= @user.photo %>" style="width:300px; height:400px">
+    <h3 class="w3-padding-64 w3-center"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+    <a href="<%=user_path(@user)%>" onclick="w3_close()" class="w3-bar-item w3-button">SETTING</a> 
+    <a href="#myevents" onclick="w3_close()" class="w3-bar-item w3-button">MY EVENTS</a>
+  </nav>
 
-<!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
-  <span class="w3-left w3-padding">SOME NAME</span>
-  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
-</header>
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">SOME NAME</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  </header>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:300px;padding-top:60px;">
 
-  <!-- Push down content on small screens --> 
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-  
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
+    <!-- Push down content on small screens --> 
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+      </div>
     </div>
+
+    <!-- Form edit user info -->
+    <div class="w3-content w3-justify" style="max-width:600px;padding-bottom:250px">
+      <%= form_for @user do |f| %>
+        <% if @user.errors.size > 0 %>
+          <div class="alert alert-danger form-control">
+            <%= @user.errors.full_messages.to_sentence %>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: 'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: 'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= f.label :address%>
+          <%= f.text_field :address, class: 'form-control'%>
+        </div>
+        <div class="form-group">
+          <%= f.label "Phone"%>
+          <%= f.text_field :tel, class: 'form-control'%>
+        </div>
+
+        <%= f.submit "Change", class: 'btn btn-outline-success' %>
+      <% end %>
+    </div> 
+
+    <!-- End page content -->
   </div>
 
-  <!-- About section -->
-  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about"> </div>
-
-<!-- End page content -->
-</div>
-
+  </div>
 <script>
 // Script to open and close sidebar
 function w3_open() {
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("myOverlay").style.display = "block";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
 }
- 
+
 function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("myOverlay").style.display = "none";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
 }
 
 // Modal Image Gallery
@@ -69,55 +99,8 @@ function onClick(element) {
   captionText.innerHTML = element.alt;
 }
 
-</script>
-
-</body>
+  </script>
 
 
-<div> 
-  <div class="row">
 
-    <div class="col"> 
-     <%= form_for @user do |f| %>
-       <% if @user.errors.size > 0 %>
-         <div class="alert alert-danger">
-           <%= @user.errors.full_messages.to_sentence %>
-         </div>
-       <% end %>
-       <div class="form-group">
-         <%= f.label :first_name %>
-         <%= f.text_field :first_name, class: 'form-control'%>
-       </div>
-       <div class="form-group">
-         <%= f.label :last_name %>
-         <%= f.text_field :last_name, class: 'form-control'%>
-       </div>
-       <div class="form-group">
-         <%= f.label :email %>
-         <%= f.text_field :email, class: 'form-control'%>
-       </div>
-       <div class="form-group">
-         <%= f.label :address%>
-         <%= f.text_field :address, class: 'form-control'%>
-       </div>
-       <div class="form-group">
-         <%= f.label "Phone"%>
-         <%= f.text_field :tel, class: 'form-control'%>
-       </div>
 
-       <%= f.submit "Change", class: 'btn btn-outline-success' %>
-     <% end %>
-    </div>
-
-    <div class="col">
-      <div class="card" style="width:15rem;"> 
-        <img class="card-img-top" src="<%= @current_user.photo.nil? ? default_user_image : @current_user.photo %>" style="width:238px; height:180px;" alt="Card image cap" >
-        <div class="card-block">
-          <a class="btn btn-primary"> add image</a>
-        </div>
-      </div>
-    </div> 
-
-  </div>
-
-</div> 
