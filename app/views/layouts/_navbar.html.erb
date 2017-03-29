@@ -11,11 +11,15 @@
   <!-- Navigation on left -->
   <ul class="nav navbar-nav ml-auto">
     <% if current_user %>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><%= link_to "Events", events_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Places", places_path, class: "nav-link" %></li>
+        </ul>
+
       <li class="dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= current_user.first_name %>
         </a>
-
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item disabled">Signed in as<br><strong><%= current_user.email %></strong><hr></a> 
           <a><%= link_to "Logout", log_out_path, method: "delete" , class: "dropdown-item" %></a>
