@@ -1,6 +1,6 @@
+<%= render 'places/carousel'%>
 <div class="container">
   <div class="row">
-    
     <div class="col-12">
     <% if @places.empty? %>
     
@@ -9,7 +9,7 @@
       
     <% else %>
     <div class="col-12">
-      <h1>There are currently <%= @places.size %> locations available.<br> You can help us by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%></h1>
+      <h1>There are currently <%= @places.size %> locations available.You can help us by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%></h1>
     </div>
     <% end %>
     </div> <!-- end row -->

@@ -19,6 +19,19 @@ module ApplicationHelper
 		image_path('default-user-image.png')
 	end
 
+#CAROUSEL ON EVENTINDEX PAGE
+	def event_index_url1
+		image_path('event-index1')
+	end
+
+	def event_index_url2
+		image_path('event-index2')
+	end
+
+	def event_index_url3
+		image_path('event-index3')
+	end
+
 	#display flash messages with bootstrap stylin
 	def bootstrap_class_for flash_type
 		{ success: 'alert-success', error: 'alert-danger', notice: 'alert-warning'}[flash_type.to_sym]

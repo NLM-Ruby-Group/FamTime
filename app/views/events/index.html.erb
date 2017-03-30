@@ -1,10 +1,13 @@
-<div class="container">
-  <div class="row">
-  <div class="col-12">
+<%= render 'events/carousel'%>
+<div class="container" >
+  <div class="row" >
+  <div class="col-12" id='event-index'>
+  
+  
     <% if @events.empty? %>
-      <h1>  Sorry,there are no events available, but you can start by <%= link_to "adding a new event", new_event_path, class: 'btn btn-outline-success'%> </h1>
+      <h3>  Sorry,there are no events available, but you can start by <%= link_to "adding a new event", new_event_path, class: 'btn btn-outline-success'%> </h3>
       <% else %>
-      <h1>There are currently <%= @events.size %> events available.<br> You can help us by <%= link_to "adding a new event", new_event_path, class: 'btn btn-outline-success'%></h1>
+      <h3>There are currently <%= @events.size %> events available. You can help us by <%= link_to "adding a new event", new_event_path, class: 'btn btn-outline-success'%></h3>
     <% end %>
   </div> <!-- end col -->
 </div> <%#end row%>
@@ -12,7 +15,7 @@
 
 <%#CATEGORIES%>
 <div class="row event-buttons">
-  <div class="col-12">
+  <div class="col-12 col-md-2">
      <div class="btn-group" role="group">
     <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Categories
@@ -22,27 +25,30 @@
             <%= link_to category.name, events_path(category_id: category.id), class:"dropdown-item btn #{params[:category_id] == category.id.to_s ? 'btn-primary' : 'btn-secondary' }" %>
           <% end %>
           <%= link_to 'All Events', events_path, class:'dropdown-item btn'%>
-          </div>
+          </div> <!-- end dropdown-->
         </div> <!-- end btn group-->
-
+        </div> <!-- end category col-->
 
         <%# ORDER EVENTS %>
-        <div class="btn-group">
-          <%= form_tag nil, method:'get' do %>
-            <% hidden_field_tag :category_id, params[:category_id] %>
-            <div class="form-inline">
-              <%= select_tag :sort_column,options_for_select([['Name','name'],['Price','price']]), class:"form-control" %>
-              <%= select_tag :sort_direction, options_for_select([['Ascending','asc'],['Descending','desc']]), class:"form-control" %>
-              <%= submit_tag "Sort", class:'btn btn-primary' %>
-            </div>
-          <% end %>
-          <div class="form-inline">
-          <%= link_to "Past Events" ,events_path(date: 'past'), class:'btn btn-secondary'%>
-          <%= link_to "Upcoming Events", events_path, class:'btn btn-secondary'%>
-        </div>
-        </div> <!-- end btn group -->
-  
-  </div> <!-- end col -->
+        <div class="col-12 col-md-6">
+          <div class="btn-group">
+            <%= form_tag nil, method:'get' do %>
+              <% hidden_field_tag :category_id, params[:category_id] %>
+              <div class="form-inline">
+                <%= select_tag :sort_column,options_for_select([['Name','name'],['Price','price']]), class:"form-control" %>
+                <%= select_tag :sort_direction, options_for_select([['Ascending','asc'],['Descending','desc']]), class:"form-control" %>
+                <%= submit_tag "Sort", class:'btn btn-primary' %>
+              </div>
+            <% end %>
+          </div> <!-- end btn group-->
+        </div> <!-- end sort col -->
+
+        <div class="col-12 col-md-4">
+          <div class="btn-group">
+            <%= link_to "Past Events" ,events_path(date: 'past'), class:'btn btn-secondary'%>
+            <%= link_to "Upcoming Events", events_path, class:'btn btn-secondary'%>
+          </div> <!-- end btn group -->
+        </div> <!-- end col -->
 </div> <!-- end row -->
       
 
