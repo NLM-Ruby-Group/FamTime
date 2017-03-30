@@ -32,6 +32,21 @@ module ApplicationHelper
 		image_path('event-index3')
 	end
 
+	#CAROUSEL ON PLACE INDEX PAGE
+	def place_index_url1
+		image_path('place-index1')
+	end
+
+	def place_index_url2
+		image_path('place-index2')
+	end
+
+	def place_index_url3
+		image_path('place-index3')
+	end
+
+
+
 	#display flash messages with bootstrap stylin
 	def bootstrap_class_for flash_type
 		{ success: 'alert-success', error: 'alert-danger', notice: 'alert-warning'}[flash_type.to_sym]

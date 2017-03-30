@@ -41,21 +41,30 @@ body,.container {
   line-height: 1.5;
   }
 
-#event-carousel .carousel-item {
+#event-carousel .carousel-item,
+#place-carousel .carousel-item {
   height: 80vh;
 }
 
-#event-carousel .carousel-item img {
+
+#event-carousel .carousel-item img,
+#place-carousel .carousel-item img {
   height: 100%;
+  background-position: center !important;
+  background-size: cover !important;
 }
-#event-carousel h1 {
+
+
+#event-carousel h1,
+#place-carousel h1  {
   margin-bottom: 20%;
   font-weight:900;
   text-shadow: 0px 0px 3px #000;
   text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
   color: $color_background;
 }
-#event-carousel .btn {
+#event-carousel .btn,
+#place-carousel .btn {
   box-shadow: 0px 0px 3px #000;
   
 }

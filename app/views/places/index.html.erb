@@ -4,12 +4,12 @@
     <div class="col-12">
     <% if @places.empty? %>
     
-      <h1>  Sorry,there are no locations available, but you can start by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%> </h1>
+      <h3>  Sorry,there are no locations available, but you can start by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%> </h3>
     </div>
       
     <% else %>
     <div class="col-12">
-      <h1>There are currently <%= @places.size %> locations available.You can help us by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%></h1>
+      <h3>There are currently <%= @places.size %> locations available.You can help us by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%></h3>
     </div>
     <% end %>
     </div> <!-- end row -->
