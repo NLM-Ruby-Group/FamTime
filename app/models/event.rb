@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   belongs_to :place
   belongs_to :category
   has_many :comments
-  validates :name,:place_id,:price, :starts_at, :ends_at, :min_participants, :max_participants, :description,presence: true
+  validates :name,:place_id,:price, :starts_at, :ends_at, :min_participants, :max_participants, :description, :image, presence: true
   accepts_nested_attributes_for :place, :user, :comments
 
   mount_uploaders :image, ImageUploader

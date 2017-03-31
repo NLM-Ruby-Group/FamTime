@@ -1,11 +1,6 @@
 <div class='col-12 col-lg-6'>
-
   <div class="card card-event">
-  
     <div class="card-top" style='background:url(<%= event.image[0].url %>)'>
-     
-
-
     <!-- display user icon that links to his profile -->
      <a class='card-user-icon' href='<%= user_path(id: event.user.id)%>'>
         <img src='<%= event.user.photo.nil? ? default_user_image :  event.user.photo %>'> 
