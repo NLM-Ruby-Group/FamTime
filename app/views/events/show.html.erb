@@ -43,6 +43,14 @@
         <p> <%= @event.description %> </p>
       </div>
 
+       <div class="row">
+      <div class="col-12">
+        <p> <% @event.attendees.each do |attendee| %> 
+          <%= attendee.first_name%> <%= attendee.last_name %> <br>
+          <% end %>
+        </p>
+      </div>
+
     </div> <!-- end row-->
     <div class="row">
       <div class="col-12">

@@ -13,7 +13,7 @@ class Event < ApplicationRecord
   validates_with EnddateValidator
   validates_with MinpeopleValidator
 
-  accepts_nested_attributes_for :place, :user, :comments
+  accepts_nested_attributes_for :place, :user, :comments, :registrations
 
   mount_uploaders :image, ImageUploader
 

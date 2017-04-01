@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :places
   root 'home#index'
   resources :users
-  resources :registrations, only: [:new,:create,:destroy]
+  resources :registrations
 
   resources :sessions, only: [:new, :create]
   delete  'log_out' => 'sessions#destroy'

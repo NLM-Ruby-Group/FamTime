@@ -14,7 +14,7 @@ def create
 end
 
 def destroy
-  @registration = current_user.registration.find(params[:id])
+  @registration = Registration.find(params[:id])
   @registration.destroy
   flash[:error] = 'deleted registration'
   redirect_to events_path
