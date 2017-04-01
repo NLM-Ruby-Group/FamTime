@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   
   def update
     if @user.update(user_params)
-      flash[:success] = "Updated successfully!"
       redirect_to user_path(@user)
     else 
       flash[:error] = @user.errors.full_messages.to_sentence
