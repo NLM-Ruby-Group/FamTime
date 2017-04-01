@@ -55,11 +55,11 @@
 
 
         
-        <div class="row">
-      <% @events.each do |g| %>
-        <%= render partial: 'card', locals: {event:g} %>
+      <div class="row">
+        <% @events.each do |g| %>
+          <%= render partial: 'card', locals: {event:g} %>
         <% end %>
-       </div> <!-- end row -->
+      </div> <!-- end row -->
 
 
 </div> <!-- end container -->

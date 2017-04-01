@@ -25,6 +25,12 @@ a {
 body,.container {
   background-color: $color_background;
 }
+//style client side validation errors
+.message {
+  color: red;
+  display: inline;
+  
+}
 
 
 
