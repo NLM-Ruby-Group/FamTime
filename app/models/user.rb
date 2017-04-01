@@ -4,8 +4,6 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   # validate the format of the email
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create
-  # for better security require a minimum length of the password
-  validates :password, length: { within: 5..40 }
   has_many :events,
            dependent: :destroy
   has_many :registrations,

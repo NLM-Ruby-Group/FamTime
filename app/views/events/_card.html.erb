@@ -5,8 +5,9 @@
      <a class='card-user-icon' href='<%= user_path(id: event.user.id)%>'>
         <img src='<%= event.user.photo.nil? ? default_user_image :  event.user.photo %>'> 
      </a>
-      
-      <button type="button" class="btn btn-primary card-event-button"> Going?</button>
+      <!-- add registration button -->
+      <%= link_to "going?", registrations_path(:event_id => event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary card-event-button' %>
+      <!-- <button type="button" class="btn btn-primary card-event-button"> Going?</button> -->
       <span class='card-event-price'> 
         <%= number_to_currency(event.price, unit: 'VND ', precision: 0) %>
       </span>

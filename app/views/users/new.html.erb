@@ -5,7 +5,7 @@
   <br>
   <h1>Join the FamTime Community</h1>
   <hr>
-  <%= form_for @user, validate: true do |f| %>
+  <%= form_for @user do |f| %>
     <% if @user.errors.size > 0 %>
       <div class="alert alert-danger">
         <%= @user.errors.full_messages.to_sentence %>
