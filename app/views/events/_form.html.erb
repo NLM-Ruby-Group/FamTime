@@ -16,7 +16,7 @@
 
   <% end %>
 
-  <%= form_for @event, html: { multipart: true } do |f| %>
+  <%= form_for @event, html: { multipart: true }, validate: true  do |f| %>
   <div class="form-group">
     <%= f.label :name%>
     <%= f.text_field :name,:required => true, class: 'form-control'%>
