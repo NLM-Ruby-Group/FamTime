@@ -4,12 +4,13 @@ class Place < ApplicationRecord
   validates :image,:description, presence: true
 
   has_many :events
-
+  has_many :reviews
   mount_uploaders :image, ImageUploader
 
   validates_processing_of :image
   validate :image_size_validation
 
+  accepts_nested_attributes_for :reviews
   private
 
   def image_size_validation

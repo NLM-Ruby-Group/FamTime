@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       get :show_mine
     end
   end
-  resources :places
+  resources :places do
+    resources :reviews
+  end
   root 'home#index'
   resources :users
   resources :registrations

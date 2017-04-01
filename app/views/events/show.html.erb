@@ -99,13 +99,12 @@
   <%= link_to 'To comment, please log in', new_session_path %>
 
   <% end %> <!-- end if -->
-</div> <!-- end comment creation row -->
-
+</div>  <!-- end col -->
+</div><!-- end comment creation row -->
 
   <!-- DISPLAY COMMENTS -->
   <div class="row">
     <!-- error in displaying comments, alwasy have empty card -->
-
     <% @comments.each do |comment| %>
     <div class="card col-12 card-block comment-display-card">
       <div class="card-title">

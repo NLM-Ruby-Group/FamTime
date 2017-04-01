@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401070235) do
+ActiveRecord::Schema.define(version: 20170401113113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,19 @@ ActiveRecord::Schema.define(version: 20170401070235) do
     t.index ["user_id"], name: "index_registrations_on_user_id", using: :btree
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "place_id"
+    t.text     "body"
+    t.integer  "rating"
+    t.text     "first_name"
+    t.text     "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_reviews_on_place_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "email"
@@ -93,4 +106,6 @@ ActiveRecord::Schema.define(version: 20170401070235) do
   add_foreign_key "events", "users"
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"
+  add_foreign_key "reviews", "places"
+  add_foreign_key "reviews", "users"
 end
