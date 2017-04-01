@@ -5,4 +5,5 @@ class User < ApplicationRecord
 
  has_many :events
  #has_many :comments
+ mount_uploaders :photo, PhotoUploader
 end
