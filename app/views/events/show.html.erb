@@ -7,6 +7,8 @@
 
 
 
+
+
   <div class="event-container">
     <div class="row">
       <div class="col-12 col-lg-6">
@@ -14,11 +16,7 @@
         <img src="<%= @event.image[0].url %>" alt="">
       </div> <!-- end first col -->
       <div class="col-12 col-lg-6">
-        <h1> <%= @event.name %></h1>
-        <h3> Created by: <%= @event.user.first_name.to_s %> <%= @event.user.last_name.to_s %></h3>
-        <p> Date: <%= @event.starts_at %> || <%= @event.ends_at %> </p>
-        <p> Location: <%= @event.place.address %> </p>
-        <p> Price: <%= number_to_currency(@event.price, unit: 'VND ', precision: 0) %> </p>
+      <!-- display button to go -->
          <% unless @event.user == current_user %>
           <% if @event.attendees.include?(current_user) %>
             <%= link_to "Cancel", registration_path(id: @event.registrations.where(user_id: current_user.id).ids), :method => :delete, class:'btn btn-danger', data: {confirm: 'Are you sure you want to cancel your participation?'} %>
@@ -28,6 +26,12 @@
         <% else %>
         <button type="button" class="btn btn-success">Your event </button>
       <% end %>
+        <h1> <%= @event.name %></h1>
+        <h3> Created by: <%= @event.user.first_name.to_s %> <%= @event.user.last_name.to_s %></h3>
+        <p> Date: <%= @event.starts_at %> || <%= @event.ends_at %> </p>
+        <p> Location: <%= @event.place.address %> </p>
+        <p> Price: <%= number_to_currency(@event.price, unit: 'VND ', precision: 0) %> </p>
+        
 
 
         <iframe
