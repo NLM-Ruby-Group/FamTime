@@ -52,12 +52,12 @@
     <div class="container middleword">
       <h2>UPCOMING EVENTS...</h2>
     </div>
-		<br>
-		<br>
-		<br>
+    <br>
+    <br>
+    <br>
     <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-md-12">
           <% @upcoming_events.in_groups_of(3) do |g| %>
           <div class="row">
             <% g.compact.each do |e| %>
@@ -69,31 +69,35 @@
       </div>
     </div>
 
-		<br>
-		<br>
+    <br>
+    <br>
     <hr class="featurette-divider">
 
-    <!-- SPOTLIGHT USER -->
+    <!-- INSTRUCTION -->
     <div class="container spotlight">
       <div class="row">
         <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Name</h2>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <%= link_to places_path do %>
+          <img class="rounded-circle" src="<%= how_it_work_location_image_url %>" alt="..." width="140" height="140">
+          <h2>Add new place</h2>
+          <% end %>
         </div><!-- /.col-lg-4 -->
+
         <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Name</h2>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <%= link_to events_path do %>
+          <img class="rounded-circle" src="<%= how_it_work_event_image_url %>" alt="..." width="140" height="140">
+          <h3>Create new events</h3>
+          <% end %>
         </div><!-- /.col-lg-4 -->
+
         <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Name</h2>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <%= link_to root_path do %>
+          <img class="rounded-circle" src="<%= how_it_work_community_image_url %>" alt="..." width="140" height="140">
+          <h3>Meet together!</h3>
+          <% end %>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
     </div><!-- /.container -->
-
   </body>
 </html>
 
