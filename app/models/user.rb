@@ -2,7 +2,13 @@ class User < ApplicationRecord
   has_secure_password
   validates :email, presence: true, uniqueness: true
   validates :first_name, :last_name, presence: true
-
- has_many :events
- #has_many :comments
+  #validate the format of the email
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create
+  # for better security require a minimum length of the password
+  validates :password, length: { within: 5..40 }
+  has_many :events
+  has_many :registrations
+  # activities will be the event that the we attend
+  has_many :activities, through: :registrations, source: :event
+  # has_many :comments
 end
