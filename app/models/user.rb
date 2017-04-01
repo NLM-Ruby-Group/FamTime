@@ -13,8 +13,6 @@ class User < ApplicationRecord
   has_many :activities, through: :registrations, source: :event
   # has_many :comments
 
-
- 
  mount_uploader :photo, PhotoUploader
 
 end
