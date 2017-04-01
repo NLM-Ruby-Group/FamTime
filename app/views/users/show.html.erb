@@ -10,12 +10,28 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-light-grey w3-content" style="max-width:1600px">
 
   <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold;padding-top:30px;" id="mySidebar"><br>
-    <img src="<%= @user.photo %>" style="width:300px; height:400px">
+  <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold;padding-top:30px;" id="mySidebar"><br> 
+    <%= form_for @user do |f| %>
+      <div class='container-avatar'>
+        <% if f.object.photo? %>
+          <%= image_tag f.object.photo, class:'avatar' %>
+        <% end %>
+        <div class='overlay'>
+          <%#  DISPLAY EACH IMAGE AND TICK TO REMOVE ALL, unfortunately cannot remove single image %>
+          <div class="input-group">
+            <span class="input-group-btn">
+              <span class="btn btn-small btn-primary btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Change</span>
+              <%= f.file_field :photo, onchange: "this.form.submit();", style: "display: none;"%>
+            </span>
+          </div> 
+        </div>
+      </div>
+    <% end %>
+
     <h3 class="w3-padding-64 w3-center"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
     <a href="<%=user_path(@user)%>" onclick="w3_close()" class="w3-bar-item w3-button">SETTING</a> 
-    <a href="#myevents" onclick="w3_close()" class="w3-bar-item w3-button">MY EVENTS</a>
+    <a href='<%=show_mine_events_path%>' onclick="w3_close()" class="w3-bar-item w3-button">MY EVENTS</a>
   </nav>
 
   <!-- Top menu on small screens -->
@@ -44,10 +60,10 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <!-- Form edit user info -->
     <div class="w3-content w3-justify" style="max-width:600px;padding-bottom:250px">
-      <%= form_for @user do |f| %>
-        <% if @user.errors.size > 0 %>
+      <%= form_for @current_user do |f| %>
+        <% if @current_user.errors.size > 0 %>
           <div class="alert alert-danger form-control">
-            <%= @user.errors.full_messages.to_sentence %>
+            <%= @current_user.errors.full_messages.to_sentence %>
           </div>
         <% end %>
         <div class="form-group">
@@ -71,14 +87,14 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           <%= f.text_field :tel, class: 'form-control'%>
         </div>
 
-        <%= f.submit "Change", class: 'btn btn-outline-success' %>
+        <%= f.submit "Save", class: 'btn btn-outline-success' %>
       <% end %>
     </div> 
 
     <!-- End page content -->
-  </div>
+        </div>
 
-  </div>
+</div>
 <script>
 // Script to open and close sidebar
 function w3_open() {
@@ -99,6 +115,6 @@ function onClick(element) {
   captionText.innerHTML = element.alt;
 }
 
-  </script>
+</script>
 
 
