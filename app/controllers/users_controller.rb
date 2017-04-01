@@ -21,9 +21,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    p params[:file]
-    @user.photo = user_params[:photo]
-    if @user.save 
+    if @user.update(user_params)
       flash[:success] = "Updated successfully!"
       redirect_to user_path(@user)
     else 
@@ -35,7 +33,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :email, :last_name, :password, :address, :tel, {photo:[]})
+    params.require(:user).permit(:first_name, :email, :last_name, :password, :address, :tel, :photo)
   end
   
   def set_user

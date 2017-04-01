@@ -14,18 +14,14 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <%= form_for @user do |f| %>
       <div class='container-avatar'>
         <% if f.object.photo? %>
-          <% f.object.photo.each do |ff| %>
-            <%= image_tag ff.url, class:'avatar' %>
-          <% end %>
-          <%#<%= f.label :remove_image %>
-          <%#<%= f.check_box :remove_image %>   
+          <%= image_tag f.object.photo, class:'avatar' %>
         <% end %>
         <div class='overlay'>
           <%#  DISPLAY EACH IMAGE AND TICK TO REMOVE ALL, unfortunately cannot remove single image %>
           <div class="input-group">
             <span class="input-group-btn">
               <span class="btn btn-small btn-primary btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Change</span>
-              <%= f.file_field :photo, onchange: "this.form.submit();", style: "display: none;", multiple: true %>
+              <%= f.file_field :photo, onchange: "this.form.submit();", style: "display: none;"%>
             </span>
           </div> 
         </div>
