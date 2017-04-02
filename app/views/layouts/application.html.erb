@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-
-	<head>
-		<title>FamTime</title>
-		<%= csrf_meta_tags %>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-		<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+  <head>
+    <title>FamTime</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
     <%= favicon_link_tag "FamTimeLogo.png" %>
-	</head>
+  </head>
 
-	<body>
-		<%= render 'layouts/navbar' %>
-		    <%=  flash_messages %>
-		<%= yield %>
-		<hr class="featurette-divider">
-		<div class="container">
-			<footer>
-				<p>&copy; 2017 FamTime Group, Vietnam. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-			</footer>    
-		</div>
-	</body>
+  <body>
+    <%= render 'layouts/navbar' %>
+    <%=  flash_messages %>
+    <%= yield %>
+    <hr class="featurette-divider">
+    <div class="container">
+      <footer>
+        <div class="footer-bottom">
+          <p>&copy; 2017 FamTime Group, Vietnam.</p>
+        </div>
+      </footer>    
+    </div>
+  </body>
 </html>
 

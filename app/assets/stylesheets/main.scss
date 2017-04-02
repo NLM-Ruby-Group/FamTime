@@ -10,6 +10,11 @@
   margin: 1rem 0; /* Space out the Bootstrap <hr> more */
 }
 
+.footer-bottom {
+  min-height: 30px;
+  width: 100%;
+}
+
 
 
 a {
@@ -25,10 +30,6 @@ a {
 body,.container {
   background-color: $color_background;
 }
-
-
-
-
 
 ///EVENT INDEX PAGE
 .event-buttons {
