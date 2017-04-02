@@ -56,17 +56,16 @@
     <br>
     <br>
     <div class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-12 col-md-12">
-          <% @upcoming_events.in_groups_of(3) do |g| %>
-          <div class="row">
-            <% g.compact.each do |e| %>
-            <%= render partial: 'card', locals: {event: e} %>
-            <% end %>
-          </div>
+      <div class="container container-fluid events-list">
+        <% @upcoming_events.in_groups_of(3) do |g| %>
+        <div class="row">
+          <% g.compact.each do |e| %>
+          <%= render partial: 'card', locals: {event: e} %>
           <% end %>
         </div>
+        <% end %>
       </div>
+    </div>
     </div>
 
     <br>
