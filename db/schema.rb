@@ -71,10 +71,10 @@ ActiveRecord::Schema.define(version: 20170401070235) do
     t.string   "last_name"
     t.text     "address"
     t.string   "password_digest"
-    t.text     "photo",           default: [],              array: true
+    t.text     "photo"
     t.string   "tel"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "comments", "events"
