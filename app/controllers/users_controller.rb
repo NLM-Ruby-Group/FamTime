@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   
   def update
     if @user.update(user_params)
-      flash[:success] = "Updated successfully!"
       redirect_to user_path(@user)
     else 
       flash[:error] = @user.errors.full_messages.to_sentence
@@ -33,7 +32,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :email, :last_name, :password, :address, :tel)
+    params.require(:user).permit(:first_name, :email, :last_name, :password, :address, :tel, :photo)
   end
   
   def set_user

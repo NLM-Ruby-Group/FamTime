@@ -28,11 +28,11 @@
 </div>
 <div class='form-group form-inline'>
   <%= f.label :opening_hours%>
-  <%= f.time_field :opening_hours, class: 'form-control'%>
+  <%= f.time_field :opening_hours, class: 'form-control',:required => true%>
 </div>
 <div class='form-group form-inline'>
   <%= f.label :closing_hours%>
-  <%= f.time_field :closing_hours, class: 'form-control'%>
+  <%= f.time_field :closing_hours, class: 'form-control',:required => true%>
 </div>
 <div class='form-group'>
   <%= f.label :description %>

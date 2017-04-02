@@ -32,8 +32,7 @@ def create
   if @event.save
     redirect_to events_path
   else
-    flash.now[:failure] = @event.errors.full_messages.to_sentence
-    render 'new'
+    render 'new'  
   end
 end
 
@@ -50,16 +49,10 @@ end
 def update
   @event = Event.find(params[:id])
   @comments = @event.comments
-  unless current_user == @event.user
-    render 'show'
-    flash[:error] = "You cannot edit an event you did not create"
-  end
-  if @event.update_attributes(event_params)
-    @event.remove_image
-    if @event.image.present?
+  
+  if @event.update(event_params)
       flash.now[:success] = "Event successfully update"
       render 'show'
-    end
   end
 end
 
@@ -84,7 +77,7 @@ end
 private 
 
 def event_params
-  params.require(:event).permit(:name, :min_participants, :max_participants, :price, :description, :starts_at, :ends_at,:is_published, :remove_image, :place_id,:category_id, {image:[]})
+  params.require(:event).permit(:name, :min_participants, :max_participants, :price, :description, :starts_at, :ends_at,:is_published, :remove_image, :place_id,:category_id, {image:[]} )
 end
 
 end
