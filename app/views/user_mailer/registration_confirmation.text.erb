@@ -1,5 +1,16 @@
-Hi <%= @user.first_name %>,
-
-Thanks for registering! To confirm your registration click the URL below.
-
+Hello <%= @user.first_name %> <%= @user.last_name %>,
+<br>
+<br>
+Thanks for registering FamTime!
+<br>
+To confirm your registration click the URL below.
+<br>
+<br>
 <%= confirm_email_user_url(@user.confirm_token) %>
+<br>
+Thanks,
+<br>
+-
+<br>
+FamTime Team
+<br>
