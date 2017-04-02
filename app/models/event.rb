@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   belongs_to :category
   has_many :comments
   has_many :registrations
+  
   # attendees are the users attending the event
   has_many :attendees, through: :registrations, source: :user
 
