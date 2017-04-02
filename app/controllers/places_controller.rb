@@ -20,10 +20,12 @@ class PlacesController < ApplicationController
 
   def edit
     @place = Place.find(params[:id])
+    @reviews = @place.reviews
   end
 
   def update
     @place = Place.find(params[:id])
+    @reviews = @place.reviews
     if @place.update(place_params) 
       flash.now[:success] = "Event successfully update"
       render 'show'
@@ -32,6 +34,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @reviews = @place.reviews
   end
 
   private
