@@ -5,8 +5,17 @@
      <a class='card-user-icon' href='<%= user_path(id: event.user.id)%>'>
         <img src='<%= event.user.photo.nil? ? default_user_image :  event.user.photo %>'> 
      </a>
+      <!-- add registration button -->
+      <% unless event.user == current_user %>
+        <% if event.attendees.include?(current_user) %>
+        <%= link_to "Cancel", registration_path(id: event.registrations.where(user_id: current_user.id).ids), :method => :delete, class:'btn btn-danger card-event-button', data: {confirm: 'Are you sure you want to cancel your participation?'} %>
+        <% else %>
+            <%= link_to "Going?", registrations_path(:event_id => event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary card-event-button' %>
+        <% end %>
+      <% else %>
+        <button type="button" class="btn btn-success card-event-button">Your event </button>
+      <% end %>
       
-      <button type="button" class="btn btn-primary card-event-button"> Going?</button>
       <span class='card-event-price'> 
         <%= number_to_currency(event.price, unit: 'VND ', precision: 0) %>
       </span>
@@ -34,6 +43,10 @@
         <p> 
           <span><i class="fa fa-user" aria-hidden="true"></i></span>
           <span><%= event.min_participants %> -- <%= event.max_participants %></span>
+        </p>
+         <p> 
+          <span><i class="fa fa-user" aria-hidden="true"></i></span>
+          <span> <%= event.attendees.count %>  Attendees</span>
         </p>
          
       </div>

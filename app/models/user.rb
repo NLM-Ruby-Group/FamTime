@@ -4,10 +4,17 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   before_create :confirmation_token
 
-  has_many :events
-  #has_many :comments
-  mount_uploader :photo, PhotoUploader
+  # validate the format of the email
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create
+  has_many :events,
+           dependent: :destroy
+  has_many :registrations,
+           dependent: :destroy
+  # activities will be the event that the we attend
+  has_many :activities, through: :registrations, source: :event
+  # has_many :comments
 
+ mount_uploader :photo, PhotoUploader
 
   def email_activate
     self.email_confirmed = true

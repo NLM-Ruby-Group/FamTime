@@ -6,14 +6,17 @@ Rails.application.routes.draw do
       get :show_mine
     end
   end
-  resources :places
+  resources :places do
+    resources :reviews
+  end
   root 'home#index'
+
   resources :users do
     member do
       get :confirm_email 
     end
   end
-
+  resources :registrations
   resources :sessions, only: [:new, :create]
   delete  'log_out' => 'sessions#destroy'
 
