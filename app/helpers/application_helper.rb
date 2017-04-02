@@ -24,7 +24,7 @@ module ApplicationHelper
   end
 
   def how_it_work_community_image_url
-    image_path('community.jpeg')
+    image_path('community.png')
   end
 
 	def default_user_image
