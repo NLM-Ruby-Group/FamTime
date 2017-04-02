@@ -7,7 +7,12 @@
 
 
 .featurette-divider {
-  margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 1rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+.footer-bottom {
+  min-height: 30px;
+  width: 100%;
 }
 
 
@@ -31,10 +36,6 @@ body,.container {
   display: inline;
   
 }
-
-
-
-
 
 ///EVENT INDEX PAGE
 .event-buttons {
@@ -105,3 +106,4 @@ body,.container {
   width: 150px;
   height: 150px;
 }
+

@@ -15,6 +15,18 @@ module ApplicationHelper
 		image_path('happy3.jpg')
 	end
 
+  def how_it_work_location_image_url
+    image_path('location.png')
+  end
+
+  def how_it_work_event_image_url
+    image_path('event.png')
+  end
+
+  def how_it_work_community_image_url
+    image_path('community.png')
+  end
+
 	def default_user_image
 		image_path('default-user-image.png')
 	end
