@@ -16,5 +16,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   delete  'log_out' => 'sessions#destroy'
 
+
+resources :phone_numbers, only: [:new, :create]
+post 'phone_numbers/verify' => "phone_numbers#verify"
+
+
   
 end

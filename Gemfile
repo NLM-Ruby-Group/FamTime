@@ -39,6 +39,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-aws'
 gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
 gem 'client_side_validations'
+gem 'twilio-ruby', '~> 4.11.1'
 #gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
