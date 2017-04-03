@@ -6,11 +6,17 @@
         <img src='<%= event.user.photo.nil? ? default_user_image :  event.user.photo %>'> 
      </a>
       <!-- add registration button -->
+      <%#if the current user is the creator dont display the registration button%>
       <% unless event.user == current_user %>
         <% if event.attendees.include?(current_user) %>
         <%= link_to "Cancel", registration_path(id: event.registrations.where(user_id: current_user.id).ids), :method => :delete, class:'btn btn-danger card-event-button', data: {confirm: 'Are you sure you want to cancel your participation?'} %>
         <% else %>
-            <%= link_to "Going?", registrations_path(:event_id => event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary card-event-button' %>
+        <%# if there s a user display button to register, otherwise link the user to login i%>
+            <%if current_user  %>
+              <%= link_to "Going?", registrations_path(:event_id => event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary card-event-button' %>
+            <% else %>
+              <%= link_to "Going?", new_session_path,class:'btn btn-primary card-event-button'%>
+            <% end %>
         <% end %>
       <% else %>
         <button type="button" class="btn btn-success card-event-button">Your event </button>
@@ -26,20 +32,24 @@
     
       <div class="card-info-1">
         <h1> <%= event.name %></h1>
-        <!-- create a link to gmaps -->
-        
-      </div>
+        <h3>
+          <span>
+            <i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+            <span><%= event.starts_at.strftime("%b%e")%>--<%= event.ends_at.strftime("%b%e") %>
+          </span>
+          </h3>
+    
+      </div> <!-- end card info 1 -->
+
       <div class="card-info-2">
       <p> 
+       <!-- create a link to gmaps -->
           <i class="fa fa-map-marker" aria-hidden="true"></i>
           <a href='http://maps.google.com/?q= <%= event.place.address %>'> 
           <%= event.place.address %> 
           </a>
         </p>
-        <h6> 
-          <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span><%= event.starts_at.strftime("%F")%> ||<%= event.ends_at.strftime("%F") %></span>
-        </h6>   
+          
         <p> 
           <span><i class="fa fa-user" aria-hidden="true"></i></span>
           <span><%= event.min_participants %> -- <%= event.max_participants %></span>

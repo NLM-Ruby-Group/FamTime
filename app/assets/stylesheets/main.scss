@@ -101,11 +101,19 @@ body,.container {
 }
 
 
-///EVENT SHOW @page
+///EVENT AND PLACE SHOW PAGE
 .user-icon img {
   border-radius: 50%;
   width: 150px;
   height: 150px;
+}
+.event-container .row,
+ .place-container .row {
+  margin-bottom: 2rem;
+}
+.event-container .row h3,
+ .place-container .row h3{
+  margin-bottom: 1rem;
 }
 
 
