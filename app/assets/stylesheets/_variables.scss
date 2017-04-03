@@ -8,9 +8,10 @@
 ////BACKGROUND COLORS
 $color_background: #ecf0f1;
 $color_background_light:lighten($color_background,30%);
+
 //FONT COLORS
 $color_font: #2c3e50;
-$color_font_light:lighten($color_font,30%);
+$color_font_light:$color_background;
 // //BUTTONS COLOR
 // $color_button_success:;
 // $color_button_success_light:lighten($color_button_success,30%);

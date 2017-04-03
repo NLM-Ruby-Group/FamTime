@@ -21,7 +21,12 @@
           <% if @event.attendees.include?(current_user) %>
             <%= link_to "Cancel", registration_path(id: @event.registrations.where(user_id: current_user.id).ids), :method => :delete, class:'btn btn-danger', data: {confirm: 'Are you sure you want to cancel your participation?'} %>
         <% else %>
-            <%= link_to "Going?", registrations_path(:event_id => @event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary' %>
+            <%# if there s a user display button to register, otherwise link the user to login i%>
+            <%if current_user  %>
+              <%= link_to "Going?", registrations_path(:event_id => event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary card-event-button' %>
+            <% else %>
+              <%= link_to "Going?", new_session_path,class:'btn btn-primary card-event-button'%>
+            <% end %>
         <% end %>
         <% else %>
         <button type="button" class="btn btn-success">Your event </button>
@@ -44,6 +49,9 @@
     </div> <!-- end main row -->
 
     <div class="row"> 
+      <div class="col-12">
+        <h3>Gallery:</h3>
+      </div>
       <% @event.image.each do |image| %>
       <div class="col-6 col-lg-3">
         <img src="<%= image.url %>" alt="">

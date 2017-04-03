@@ -20,20 +20,21 @@
     
       <div class="card-info-1">
         <h1> <%= event.name %></h1>
-        <!-- create a link to gmaps -->
-        
-      </div>
+        <h3>
+          <span>
+            <i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+            <span><%= event.starts_at.strftime("%b%e")%>--<%= event.ends_at.strftime("%b%e") %>
+          </span>
+          </h3>
+    
+      </div> <!-- end card info 1 -->
       <div class="card-info-2">
       <p> 
           <i class="fa fa-map-marker" aria-hidden="true"></i>
           <a href='http://maps.google.com/?q= <%= event.place.address %>'> 
           <%= event.place.address %> 
           </a>
-        </p>
-        <h6> 
-          <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span><%= event.starts_at.strftime("%F")%> ||<%= event.ends_at.strftime("%F") %></span>
-        </h6>   
+        </p>  
         <p> 
           <span><i class="fa fa-user" aria-hidden="true"></i></span>
           <span><%= event.min_participants %> -- <%= event.max_participants %></span>

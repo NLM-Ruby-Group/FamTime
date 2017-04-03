@@ -28,6 +28,8 @@
 .card-event-button {
   right: 0;
   bottom: 0;
+  color: $color_font_light !important;
+  border: 1px solid $color_font_light;
 }
 
 .card-event-price {
@@ -35,7 +37,7 @@
   right: 0;
   font-size: 2rem;
   background-color: transparentize($color_font,.5);
-  color: $color_background;
+  color: $color_font_light;
 }
 
 
@@ -51,7 +53,7 @@
 .card-user-icon img {
   width: 60px;
   height: 60px;
-  border: 1px solid $color_background;
+  border: 1px solid $color_font_light;
   border-radius: 50%;
 }
 
@@ -62,7 +64,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.card-info-1 *,.card-info-2 * {
+.card-info-2 * {
   display:flex;
   flex-wrap: nowrap;
   align-items: baseline;
@@ -72,7 +74,12 @@
   margin-right: .5rem;
 }
 
-
+.card-info-1 {
+  flex-direction: row;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
 
 
 ///PLACE SHOW/ EVENT SHOW
