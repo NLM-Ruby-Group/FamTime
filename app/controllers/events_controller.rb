@@ -2,6 +2,8 @@ class EventsController < ApplicationController
 
 before_action :require_user, only: [:create, :new, :edit,:update, :publish]
 
+before_action :redirect_if_unverified, only: [:create,:new, :edit,:update]
+
 def index
   @events = Event.upcoming
   @category = Category.all

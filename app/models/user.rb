@@ -12,9 +12,16 @@ class User < ApplicationRecord
            dependent: :destroy
   # activities will be the event that the we attend
   has_many :activities, through: :registrations, source: :event
-  # has_many :comments
 
- mount_uploader :photo, PhotoUploader
+  # a user has only one phone number
+  has_one :phone_number
+
+  accepts_nested_attributes_for :phone_number
+
+  mount_uploader :photo, PhotoUploader
+
+
+
 
   def email_activate
     self.email_confirmed = true

@@ -24,4 +24,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_if_unverified
+    if current_user && current_user.phone_number.nil? || !current_user.phone_number.verified?
+      redirect_to new_phone_number_path, notice: "Please verify your phone number"
+    end      
+  end
 end

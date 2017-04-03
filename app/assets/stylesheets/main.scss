@@ -3,6 +3,7 @@
 @import "bootstrap";
 @import "home.scss";
 @import "cards.scss";
+@import "phone_numbers";
 @import "font-awesome";
 
 
@@ -107,3 +108,9 @@ body,.container {
   height: 150px;
 }
 
+
+
+//USER VERIFIED ICON 
+.fa-check {
+  color: #5CB85C;
+}
