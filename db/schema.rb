@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20170402124143) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "is_published"
-    t.text     "image",            default: [],              array: true
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.text     "image",                         array: true
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["category_id"], name: "index_events_on_category_id", using: :btree
     t.index ["place_id"], name: "index_events_on_place_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
@@ -65,11 +65,11 @@ ActiveRecord::Schema.define(version: 20170402124143) do
   create_table "places", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
-    t.text     "image",         default: [],              array: true
+    t.text     "image",                      array: true
     t.time     "opening_hours"
     t.float    "rating"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.time     "closing_hours"
     t.text     "description"
   end
@@ -102,13 +102,13 @@ ActiveRecord::Schema.define(version: 20170402124143) do
     t.string   "last_name"
     t.text     "address"
     t.string   "password_digest"
-    t.text     "photo"
+    t.text     "photo",           default: ""
     t.string   "tel"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.integer  "phone_number_id"
     t.boolean  "email_confirmed", default: false
     t.string   "confirm_token"
+    t.integer  "phone_number_id"
   end
 
   add_foreign_key "comments", "events"
