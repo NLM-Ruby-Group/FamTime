@@ -18,4 +18,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :phone_number
 
   mount_uploader :photo, PhotoUploader
+
+
+
+
 end

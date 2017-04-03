@@ -28,7 +28,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
     <% end %>
 
-    <h3 class="w3-padding-64 w3-center"><%= "#{@user.first_name} #{@user.last_name}" %><% if @user.phone_number.verified? %> <i class="fa fa-check" aria-hidden="true"></i> <% end %></h3> 
+    <h3 class="w3-padding-64 w3-center"><%= "#{@user.first_name} #{@user.last_name}" %><% if !@user.phone_number.nil? &&@user.phone_number.verified? %> <i class="fa fa-check" aria-hidden="true"></i> <% end %></h3> 
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
     <a href="<%=user_path(@user)%>" onclick="w3_close()" class="w3-bar-item w3-button">SETTING</a> 
     <a href='<%=show_mine_events_path%>' onclick="w3_close()" class="w3-bar-item w3-button">MY EVENTS</a>
