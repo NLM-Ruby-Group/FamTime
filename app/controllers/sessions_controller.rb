@@ -6,9 +6,14 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user
       if @user.authenticate(params[:password])
-        flash[:success] = "You signed in as " + @user.email
-        session[:user_id] = @user.id
-        redirect_to root_path
+        if @user.email_confirmed
+          flash[:success] = "You signed in as " + @user.email
+          session[:user_id] = @user.id
+          redirect_to root_path
+        else
+          flash[:success] = "Your account is not activated"
+          redirect_to new_session_path 
+        end
       else
         flash.now[:error] = "Incorrect password"
         render 'new'

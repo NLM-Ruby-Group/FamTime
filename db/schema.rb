@@ -104,9 +104,11 @@ ActiveRecord::Schema.define(version: 20170402124143) do
     t.string   "password_digest"
     t.text     "photo"
     t.string   "tel"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "phone_number_id"
+    t.boolean  "email_confirmed", default: false
+    t.string   "confirm_token"
   end
 
   add_foreign_key "comments", "events"

@@ -10,9 +10,13 @@ Rails.application.routes.draw do
     resources :reviews
   end
   root 'home#index'
-  resources :users
-  resources :registrations
 
+  resources :users do
+    member do
+      get :confirm_email 
+    end
+  end
+  resources :registrations
   resources :sessions, only: [:new, :create]
   delete  'log_out' => 'sessions#destroy'
 
