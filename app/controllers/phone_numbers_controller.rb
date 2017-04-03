@@ -8,6 +8,7 @@ end
 
 def create
   @phone_number = PhoneNumber.find_or_create_by(phone_number: params[:phone_number][:phone_number])
+  @phone_number.user_id = current_user.id
   @phone_number.generate_pin
   @phone_number.send_pin
   respond_to do |format|
@@ -23,6 +24,10 @@ def verify
     format.js
   end
 end
+
+
+
+
 
 
 

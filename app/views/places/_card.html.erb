@@ -6,8 +6,10 @@
     <div class="card-block">
       <h4 class="card-title"> <%= place.name %></h4>
       <h6 class="card-subtitle">
+        Address:
         <%= place.address %>
         <br>
+        Opening Hours:
         <%= place.opening_hours.strftime("%H:%M") %> - <%= place.closing_hours.strftime("%H:%M") %>
       </h6>
       <br>
@@ -15,7 +17,7 @@
       <%= place.description %>
       </p>
 
-    </div>
-  </div>
+    </div> <!-- end card-block -->
+  </div> <!-- end card-->
   <% end%>
-</div>
+</div> <!-- end col -->
