@@ -6,7 +6,7 @@
 
 
 ////BACKGROUND COLORS
-$color_background: #ecf0f1;
+$color_background: lighten(#ecf0f1,20%);
 $color_background_light:lighten($color_background,30%);
 
 //FONT COLORS

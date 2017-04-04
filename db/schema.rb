@@ -106,9 +106,9 @@ ActiveRecord::Schema.define(version: 20170402124143) do
     t.string   "tel"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.integer  "phone_number_id"
     t.boolean  "email_confirmed", default: false
     t.string   "confirm_token"
+    t.integer  "phone_number_id"
   end
 
   add_foreign_key "comments", "events"
