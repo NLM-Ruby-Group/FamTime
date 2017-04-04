@@ -13,10 +13,15 @@ $color_background_light:lighten($color_background,30%);
 $color_font: #2c3e50;
 $color_font_light:$color_background;
 // //BUTTONS COLOR
-// $color_button_success:;
-// $color_button_success_light:lighten($color_button_success,30%);
-// $color_button_info:;
-// $color_button_info_light:lighten($color_button_info,30%);
-// $color_button_danger:;
-// $color_button_danger_light:lighten($color_button_danger,30%);
+$color_button_primary:#2980b9;
+$color_button_primary_light:lighten($color_button_primary,10%);
+
+$color_button_success:#2ecc71;
+$color_button_success_light:lighten($color_button_success,10%);
+
+$color_button_info:#3498db;
+$color_button_info_light:lighten($color_button_info,10%);
+
+$color_button_danger:#e74c3c;
+$color_button_danger_light:lighten($color_button_danger,10%);
 
