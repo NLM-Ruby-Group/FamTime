@@ -58,6 +58,11 @@ module ApplicationHelper
 	end
 
 
+	#STAR ICON FOR RATING
+def star_icon
+	image_path('star-icon')
+end
+
 
 	#display flash messages with bootstrap stylin
 	def bootstrap_class_for flash_type

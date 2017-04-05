@@ -2,11 +2,11 @@ class Event < ApplicationRecord
   belongs_to :user
   belongs_to :place
   belongs_to :category
-  has_many :comments
-  has_many :registrations
+  has_many :comments, dependent: :destroy
+  has_many :registrations, dependent: :destroy
   
   # attendees are the users attending the event
-  has_many :attendees, through: :registrations, source: :user
+  has_many :attendees, through: :registrations, source: :user, dependent: :destroy
 
   validates :name, :place_id, :price, :starts_at, :ends_at, :min_participants, :max_participants, :description, :image, presence: true
   # moved the validators to separate files
