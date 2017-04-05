@@ -4,6 +4,13 @@
 .card {
   font-size: .8rem;
   margin-top: 1rem;
+  -webkit-box-shadow: 3px 5px 13px -5px rgba(44,62,80,1);
+-moz-box-shadow: 3px 5px 13px -5px rgba(44,62,80,1);
+box-shadow: 3px 5px 13px -5px rgba(44,62,80,1);
+}
+.card h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 .card a {
   color: $color_font;
@@ -117,4 +124,13 @@
   margin-top: 2rem;
   height: auto;
   padding: 1rem !important;
+}
+
+
+
+
+///STYLE RATINGS
+
+.star-icon {
+  width: 30px ;
 }

@@ -16,20 +16,28 @@
         <img src="<%= @event.image[0].url %>" alt="">
       </div> <!-- end first col -->
       <div class="col-12 col-lg-6">
+      <% if @event.ends_at < Time.now %>
+        <%# if the event is in the past display expired %>
+          <button type="button" class="btn btn-warning card-event-button">Expired </button>
+      <% elsif @event.attendees.count == @event.max_participants %>
+        <%# if the event is full display full %>
+          <button type="button" class="btn btn-warning card-event-button">Full </button>
+      <% else %>
       <!-- display button to go -->
          <% unless @event.user == current_user %>
-          <% if @event.attendees.include?(current_user) %>
-            <%= link_to "Cancel", registration_path(id: @event.registrations.where(user_id: current_user.id).ids), :method => :delete, class:'btn btn-danger', data: {confirm: 'Are you sure you want to cancel your participation?'} %>
-        <% else %>
+            <% if @event.attendees.include?(current_user) %>
+              <%= link_to "Cancel", registration_path(id: @event.registrations.where(user_id: current_user.id).ids), :method => :delete, class:'btn btn-danger', data: {confirm: 'Are you sure you want to cancel your participation?'} %>
+          <% else %>
             <%# if there s a user display button to register, otherwise link the user to login i%>
-            <%if current_user  %>
-              <%= link_to "Going?", registrations_path(:event_id => event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary card-event-button' %>
+            <% if current_user  %>
+              <%= link_to "Going?", registrations_path(:event_id => @event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary card-event-button' %>
             <% else %>
               <%= link_to "Going?", new_session_path,class:'btn btn-primary card-event-button'%>
-            <% end %>
-        <% end %>
+            <% end %> <!-- end if curent_user -->
+        <% end %> <!-- end unless -->
         <% else %>
-        <button type="button" class="btn btn-success">Your event </button>
+          <button type="button" class="btn btn-success">Your event </button>
+        <% end %>
       <% end %>
         <h1> <%= @event.name %></h1>
         <h3> Created by: <%= @event.user.first_name.to_s %> <%= @event.user.last_name.to_s %></h3>

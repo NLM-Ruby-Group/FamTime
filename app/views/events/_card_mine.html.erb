@@ -8,7 +8,7 @@
 
     <!-- display user icon that links to his profile -->
      <a class='card-user-icon' href='<%= user_path(id: event.user.id)%>'>
-        <img src='<%= event.user.photo.nil? ? default_user_image :  event.user.photo %>'> 
+        <img src='<%= event.user.photo.blank? ? default_user_image :  event.user.photo %>'> 
      </a>
       <span class='card-event-price'> 
         <%= number_to_currency(event.price, unit: 'VND ', precision: 0) %>
@@ -20,15 +20,16 @@
     
       <div class="card-info-1">
         <h1> <%= event.name %></h1>
-        <h3>
+        
+    
+      </div> <!-- end card info 1 -->
+      <div class="card-info-2">
+      <h3>
           <span>
             <i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
             <span><%= event.starts_at.strftime("%b%e")%>--<%= event.ends_at.strftime("%b%e") %>
           </span>
           </h3>
-    
-      </div> <!-- end card info 1 -->
-      <div class="card-info-2">
       <p> 
           <i class="fa fa-map-marker" aria-hidden="true"></i>
           <a href='http://maps.google.com/?q= <%= event.place.address %>'> 
