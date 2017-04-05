@@ -3,8 +3,8 @@ class Place < ApplicationRecord
   validates :name,:address,presence: true, uniqueness: true
   validates :image,:description, presence: true
 
-  has_many :events
-  has_many :reviews
+  has_many :events, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   mount_uploaders :image, ImageUploader
 
   validates_processing_of :image

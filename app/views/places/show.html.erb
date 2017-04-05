@@ -55,6 +55,8 @@
       <div class="card-description">
         <%= f.label :body %>
         <%= f.text_area :body, class:'form-control' %>
+        <%= f.label :rating %>
+        <%= f.select :rating, (1..5) %>
         <%= f.submit 'Post review', class:'btn btn-primary' %>
       </div>
       <% end %> <!-- end form-->
@@ -72,12 +74,18 @@
     <% @reviews.each do |review| %>
     <div class="card col-12 card-block comment-display-card">
       <div class="card-title">
+      <% review.rating.to_i.times do %>
+        <img class='star-icon' src=" <%= star_icon %>" alt=""> 
+      <% end %>
         <h6> <%= review.first_name %> <%= review.last_name %></h6>
         <hr>
       </div>
       <div class="card-description">
         <p><%= review.body %> </p>
       </div>
+      <h6>
+      Created at: <%= review.created_at.strftime("%FT%T") %>
+      </h6>
     </div>
     <% end %>
   </div> <!-- end row -->

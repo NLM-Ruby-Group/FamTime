@@ -4,12 +4,12 @@
   <div class="card">
     <img class="card-img-top" src="<%= place.image[0].url %>">
     <div class="card-block">
-      <h4 class="card-title"> <%= place.name %></h4>
+      <h1 class="card-title"> <%= place.name %></h1> <br>
       <h6 class="card-subtitle">
-        Address:
+         <i class="fa fa-map-marker" aria-hidden="true"></i>
         <%= place.address %>
-        <br>
-        Opening Hours:
+        <br> <br>
+         <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
         <%= place.opening_hours.strftime("%H:%M") %> - <%= place.closing_hours.strftime("%H:%M") %>
       </h6>
       <br>
