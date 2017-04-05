@@ -1,14 +1,12 @@
-
 @import "variables";
 @import "bootstrap";
 @import "home.scss";
 @import "cards.scss";
 @import "phone_numbers";
 @import "font-awesome";
-
-
 .featurette-divider {
-  margin: 1rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 1rem 0;
+  /* Space out the Bootstrap <hr> more */
 }
 
 .footer-bottom {
@@ -16,44 +14,46 @@
   width: 100%;
 }
 
-
-
 a {
   text-decoration: none !important;
 }
+
 .container {
   padding-top: 1rem;
 }
+
 * {
   color: $color_font;
   font-family: 'Roboto', sans-serif;
 }
-body,.container {
+
+body,
+.container {
   background-color: $color_background;
 }
+
 //style client side validation errors
 .message {
   color: red;
   display: inline;
-  
 }
 
 ///EVENT INDEX PAGE
 .event-buttons {
   margin-bottom: 1rem;
 }
+
 #event-index {
   display: flex;
   flex-direction: column;
   justify-content: center;
   line-height: 1.5;
-  }
+}
 
 #event-carousel .carousel-item,
 #place-carousel .carousel-item {
   height: 80vh;
 }
-
 
 #event-carousel .carousel-item img,
 #place-carousel .carousel-item img {
@@ -62,19 +62,18 @@ body,.container {
   background-size: cover !important;
 }
 
-
 #event-carousel h1,
-#place-carousel h1  {
+#place-carousel h1 {
   margin-bottom: 20%;
-  font-weight:900;
+  font-weight: 900;
   text-shadow: 0px 0px 3px #000;
   text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
   color: $color_background;
 }
+
 #event-carousel .btn,
 #place-carousel .btn {
   box-shadow: 0px 0px 3px #000;
-  
 }
 
 //EVENT AND PLACES form
@@ -97,9 +96,7 @@ body,.container {
   border: none;
   padding: 5px;
   background-color: $color_background_light;
-
 }
-
 
 ///EVENT AND PLACE SHOW PAGE
 .user-icon img {
@@ -107,18 +104,51 @@ body,.container {
   width: 150px;
   height: 150px;
 }
+
 .event-container .row,
- .place-container .row {
+.place-container .row {
   margin-bottom: 2rem;
 }
+
 .event-container .row h3,
- .place-container .row h3{
+.place-container .row h3 {
   margin-bottom: 1rem;
 }
-
-
 
 //USER VERIFIED ICON 
 .fa-check {
   color: #5CB85C;
+}
+
+///STYLE BUTTON COLORS
+.btn-success {
+  background-color: $color_button_success;
+}
+
+.btn-succes:hover {
+  background-color: $color_button_success_light;
+}
+
+.btn-info {
+  background-color: $color_button_info;
+}
+
+.btn-info:hover {
+  background-color: $color_button_info_light;
+}
+
+.btn-primary {
+  background-color: $color_button_primary;
+}
+
+.btn-primary:hover {
+  background-color: $color_button_primary_light;
+}
+
+.btn-danger {
+  background-color: $color_button_danger;
+}
+
+.btn-danger:hover {
+  background-color: $color_button_danger_light;
 }

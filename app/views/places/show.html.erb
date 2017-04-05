@@ -4,11 +4,11 @@
 
 
 <div class="place-container">
-  <div class="row ">
+  <div class="row" >
     <div class="col-12 col-lg-6">
         <img src="<%= @place.image[0].url %>" alt="">
      </div>
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6" id='detail-container'  >
        <h1> <%= @place.name %></h1>
     <h6> <%= @place.address %> </h6>
     <p> Opening Hours : <%= @place.opening_hours.strftime("%H : %M") %> TO <%= @place.closing_hours.strftime("%H : %M") %> </p>
