@@ -2,7 +2,7 @@
 
 
 
-<div class="row" id='event-banner'>
+<div class="row no-gutters" id='event-banner'>
   <div class="col-12" style='background:url(<%= @event.image[0].url %>'>
   </div>
 </div> <!-- banner row -->
@@ -10,11 +10,11 @@
 <div class="container">
 <div class="row" >
   <div class="col-12 col-lg-8" id='event-details'>
-        <%= link_to 'Back', events_path, class:"btn btn-primary btn-sm"%> 
+        <%= link_to 'Back', events_path, class:"btn btn-primary"%> 
       
       <% unless @event.starts_at < Time.now %>
         <% if current_user == @event.user %>
-          <%= link_to 'Edit', edit_event_path ,class:"btn btn-info btn-sm"%>
+          <%= link_to 'Edit', edit_event_path ,class:"btn btn-info"%>
         <% end %>
       <% end %> <!-- end nav buttons -->
      <% if @event.ends_at < Time.now %>
@@ -51,9 +51,12 @@
         <p> <%= @event.description %> </p>
 
         <h3>Gallery:</h3>
-        <% @event.image.each do |image| %>
+        <div class="col-12">
+           <% @event.image.each do |image| %>
             <img src="<%= image.url %>" alt="">
         <% end %> <!-- end images -->
+        </div>
+       
 
   </div> <!-- end main col -->
 
