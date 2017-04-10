@@ -15,7 +15,7 @@
 }
 h1 {
   text-transform: uppercase;
-  font-size: bold;
+  font-weight: bold;
 }
 
 a {
@@ -42,7 +42,7 @@ body,
   display: inline;
 }
 
-///EVENT INDEX PAGE
+///EVENT AND PLACE  INDEX PAGE
 .event-buttons {
   margin-bottom: 1rem;
 }
@@ -64,6 +64,7 @@ body,
   height: 100%;
   background-position: center !important;
   background-size: cover !important;
+  background-attachment: fixed !important;
 }
 
 #event-carousel h1,
@@ -79,6 +80,7 @@ body,
 #place-carousel .btn {
   box-shadow: 0px 0px 3px #000;
 }
+
 
 //EVENT AND PLACES form
 .form-inline label {
@@ -151,7 +153,11 @@ body,
   padding-right: 7rem;
 }
 
-
+[id$='details'] h1 {
+  margin-top: 3rem;
+  color: $color_button_success;
+  font-size: 4rem;
+} 
 
 
 //USER VERIFIED ICON 
@@ -191,3 +197,7 @@ body,
 .btn-danger:hover {
   background-color: $color_button_danger_light;
 }
+
+
+
+
