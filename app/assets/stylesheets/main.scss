@@ -17,17 +17,7 @@ h1 {
   text-transform: uppercase;
   font-size: bold;
 }
-//STYLE UNDERLINE UNDER ALL THE HEADERS
-h3 {
-  display: inline-block;
-}
-h3::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  height: .25rem;
-  background-color: $color_button_success;
-}
+
 a {
   text-decoration: none !important;
 }
@@ -118,29 +108,50 @@ body,
   width: 150px;
   height: 150px;
 }
-#event-banner {
+
+//select both event and place banner
+[id$="banner"]{
   margin-bottom: 5rem;
 }
-#event-banner{
+[id$='banner']{
   width: 100%;
   height: 80vh;
 }
 
-#event-banner div {
+[id$="banner"] div {
   background-position: center !important;
   background-size: cover !important;
   background-attachment: fixed !important;
 }
-#event-details img {
+
+//select both place and event details
+[id$="details"] img {
   max-width: 300px;
   height: auto;
 }
-#event-details h3 {
+//STYLE THE H3 WITH AN UNDERLINE 
+[id$='details'] h3,
+[id$='additional-info'] h3 {
   margin-top: 2rem;
+  display: inline-block;
+  line-height: 1rem;
 }
-#event-details p {
+[id$='details'] h3:after,
+[id$='additional-info'] h3:after 
+{
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: .25rem;
+  background-color: $color_button_success;
+}
+
+[id$='details'] p{
   padding-right: 7rem;
 }
+
+
 
 
 //USER VERIFIED ICON 
