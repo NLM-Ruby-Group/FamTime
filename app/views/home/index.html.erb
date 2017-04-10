@@ -51,21 +51,16 @@
 
     <div class="container middleword main-color">
       <h1>UPCOMING EVENTS...</h1>
-    </div>
     <br>
     <br>
     <br>
-    <div class="container">
-      <div class="container container-fluid events-list">
         <% @upcoming_events.in_groups_of(3) do |g| %>
-        <div class="row">
+        <div class="row no-gutters">
           <% g.compact.each do |e| %>
           <%= render partial: 'card', locals: {event: e} %>
           <% end %>
         </div>
         <% end %>
-      </div>
-    </div>
     </div>
 
     <br>
@@ -75,9 +70,7 @@
     <div class="instruction_cover">
       <div class="spotlight">
         <div class="row">
-          <div class="col-lg-4">
-          </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4">
+          <div class="col-12 text-center">
             <h1>How It Works</h1>
           </div><!-- /.col-lg-4 -->
         </div>
@@ -85,7 +78,7 @@
           <div class="col-lg-4">
             <%= link_to places_path do %>
             <span>
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <i class="fa fa-map-marker" aria-hidden="true"></i> 
             </span>
             <h2>1. Add new place</h2>
             <% end %>

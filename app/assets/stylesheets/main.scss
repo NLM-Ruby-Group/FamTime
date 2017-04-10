@@ -9,11 +9,13 @@
   margin: 1rem 0;
   /* Space out the Bootstrap <hr> more */
 }
-
-.footer-bottom {
-  min-height: 30px;
-  width: 100%;
+html,body {
+  height: 100%;
 }
+body {
+  background-color: $color_background;
+}
+
 h1 {
   text-transform: uppercase;
   font-weight: bold;
@@ -25,6 +27,7 @@ a {
 
 .container {
   padding-top: 1rem;
+  min-height: 90%;
 }
 
 * {
@@ -32,10 +35,8 @@ a {
   font-family: 'Roboto', sans-serif;
 }
 
-body,
-.container {
-  background-color: $color_background;
-}
+
+
 
 //style client side validation errors
 .message {

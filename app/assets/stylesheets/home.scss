@@ -118,6 +118,13 @@ body {
 
 
 //HOW IT WORKS ICONS
+.instruction_cover {
+	height: 450px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .spotlight span{
 	display: flex;
 	width: 100px;
@@ -140,6 +147,11 @@ body {
 footer span {
 	font-size: 0.7rem;
 }
-footer p {
-	margin-bottom: 5px;
+
+footer {
+	display: block;
+	color: $color_font;
+	height: 100px;
+	width: 100%;
+	text-align: center;
 }
