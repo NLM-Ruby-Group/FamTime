@@ -3,6 +3,7 @@
 @import "home.scss";
 @import "cards.scss";
 @import "phone_numbers";
+@import "form";
 @import "font-awesome";
 .featurette-divider {
   margin: 1rem 0;
@@ -173,6 +174,12 @@ body,
 .btn-succes:hover {
   background-color: $color_button_success_light;
 }
+.btn-outline-success:hover {
+  background-color: $color_button_success_light;
+}
+.btn-outline-success {
+  border: 1px solid $color_button_success !important; 
+}
 
 .btn-info {
   background-color: $color_button_info;
@@ -198,6 +205,20 @@ body,
   background-color: $color_button_danger_light;
 }
 
+
+.btn {
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0) !important;
+  outline: 1px solid !important;
+  outline-color: rgba(255, 255, 255, .5) !important;
+  outline-offset: 0px !important;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+.btn:hover {
+  cursor: pointer !important;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2) !important;
+  outline-offset: 15px !important;
+}
 
 
 

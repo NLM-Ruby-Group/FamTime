@@ -1,0 +1,12 @@
+@import 'variables';
+
+.form {
+  text-align: center;
+}
+.form a {
+  color: $color_button_success;
+}
+.form input {
+  width: 30%;
+  margin: auto auto 2rem auto;
+}

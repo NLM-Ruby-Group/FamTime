@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def logo_image_url
-		image_path('FamTimeLogo.png')
+		image_path('logo.svg')
 	end
 
 	def slide_image_url1

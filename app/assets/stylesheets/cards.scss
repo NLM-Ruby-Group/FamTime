@@ -11,12 +11,16 @@ box-shadow: 3px 5px 13px -5px rgba(44,62,80,1);
 .card h1 {
   font-size: 2rem;
   text-transform: uppercase;
+  color: $color_button_success;
 }
 .card a {
   color: $color_font;
 }
-.card-event:hover {
+.card-event:hover .card {
   background-color: transparentize($color_font,.8);
+  -webkit-box-shadow: 5px 8px 18px -5px rgba(44,62,80,1);
+-moz-box-shadow: 5px 8px 18px -5px rgba(44,62,80,1);
+box-shadow: 5px 8px 18px -5px rgba(44,62,80,1);
 }
 .card-top {
   height: 300px;
