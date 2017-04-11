@@ -109,17 +109,28 @@ body {
 
 
 .navbar-brand {
-	font-size: 1.5rem;
+	font-size: 2rem;
 }
 .navbar-brand span {
 	color: $color_button_success_light;
 }
-
+.navbar-brand img {
+	height: 50px;
+	width: 50px;
+}
+.navbar-toggler {
+	margin-top: .5rem;
+	color: $color_button_success !important;
+}
+.navbar-toggler-icon {
+	background-image: url('hamburger.svg') !important;
+}
 
 
 //HOW IT WORKS ICONS
 .instruction_cover {
-	height: 450px;
+	min-height: 450px;
+	height: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;

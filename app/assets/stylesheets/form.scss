@@ -1,5 +1,6 @@
 @import 'variables';
 
+//LOGIN AN SIGNUP STYLING
 .form {
   text-align: center;
 }
@@ -9,4 +10,28 @@
 .form input {
   width: 30%;
   margin: auto auto 2rem auto;
+}
+
+
+
+//EVENT AND PLACES form
+.form-inline label {
+  margin-right: 1rem;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group img {
+  max-width: 100%;
+  width: auto;
+  max-height: 400px;
+}
+
+.form-group select {
+  background: transparent;
+  border: none;
+  padding: 5px;
+  background-color: $color_background_light;
 }

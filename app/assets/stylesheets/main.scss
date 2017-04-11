@@ -56,21 +56,18 @@ a {
   line-height: 1.5;
 }
 
-#event-carousel .carousel-item,
-#place-carousel .carousel-item {
+[id*='arousel'] .carousel-item {
   height: 80vh;
 }
 
-#event-carousel .carousel-item img,
-#place-carousel .carousel-item img {
+[id*='arousel'] .carousel-item img{
   height: 100%;
   background-position: center !important;
   background-size: cover !important;
   background-attachment: fixed !important;
 }
 
-#event-carousel h1,
-#place-carousel h1 {
+[id*='arousel'] h1 {
   margin-bottom: 20%;
   font-weight: 900;
   text-shadow: 0px 0px 3px #000;
@@ -78,33 +75,12 @@ a {
   color: $color_background;
 }
 
-#event-carousel .btn,
-#place-carousel .btn {
+[id*='arousel'] .btn {
   box-shadow: 0px 0px 3px #000;
 }
 
 
-//EVENT AND PLACES form
-.form-inline label {
-  margin-right: 1rem;
-}
 
-.form-group label {
-  font-weight: bold;
-}
-
-.form-group img {
-  max-width: 100%;
-  width: auto;
-  max-height: 400px;
-}
-
-.form-group select {
-  background: transparent;
-  border: none;
-  padding: 5px;
-  background-color: $color_background_light;
-}
 
 ///EVENT AND PLACE SHOW PAGE
 .user-icon img {
@@ -129,6 +105,9 @@ a {
 }
 
 //select both place and event details
+[id$='details'] {
+  margin-bottom: 3rem;
+}
 [id$="details"] img {
   max-width: 300px;
   height: auto;

@@ -40,8 +40,8 @@
 
         <h1> <%= @event.name %></h1>
         <h3> Created by: <%= @event.user.first_name.to_s %> <%= @event.user.last_name.to_s %></h3>
-        <p> Date: <%= @event.starts_at %> || <%= @event.ends_at %> </p>
-        <p> Location: <%= @event.place.address %> </p>
+        <p> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <%= @event.starts_at %> || <%= @event.ends_at %> </p>
+        <p> <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @event.place.address %> </p>
         <p> Price: <%= number_to_currency(@event.price, unit: 'VND ', precision: 0) %> </p>
 
         <h3> Description:</h3>
