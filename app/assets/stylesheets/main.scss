@@ -48,7 +48,9 @@ a {
 .event-buttons {
   margin-bottom: 1rem;
 }
-
+.event-buttons .btn-group {
+  margin-bottom: 1rem;
+}
 #event-index {
   display: flex;
   flex-direction: column;

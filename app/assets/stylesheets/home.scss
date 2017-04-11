@@ -126,6 +126,10 @@ body {
 	background-image: url('hamburger.svg') !important;
 }
 
+.dropdown-toggle:after {
+	color: $color_button_success !important;
+}
+
 
 //HOW IT WORKS ICONS
 .instruction_cover {
