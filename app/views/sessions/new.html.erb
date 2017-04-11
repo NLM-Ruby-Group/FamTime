@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container form">
   <br>
   <br>
   <br>
@@ -12,5 +12,7 @@
   <br>
   <%= submit_tag "Let me in", class: 'btn btn-success', data: {disable_with: "Logging in..."} %>
   <% end %>
+
+  <p> Don't have an account yet? <%= link_to 'Create one!', new_session_path %> </p>
 
 </div>

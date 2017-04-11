@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container form">
   <br>
   <br>
   <br>
@@ -27,7 +27,9 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control'%>
     </div>
-    <%= f.submit "Sign Up", class: 'btn btn-outline-success' %>
+    <%= f.submit "Sign Up", class: 'btn btn-success' %>
   <% end %>
+
+  <p> Already have an account? <%= link_to 'Sign in!', new_session_path %> </p>
 </div>
 
