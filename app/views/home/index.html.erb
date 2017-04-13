@@ -52,13 +52,17 @@
     <br>
     <br>
     <br>
-        <% @upcoming_events.in_groups_of(3) do |g| %>
+      <% if @events.nil? %>
+        <h2> No events at the moment</h2>
+      <% else %>
+        <% @events.in_groups_of(3) do |g| %>
         <div class="row no-gutters">
           <% g.compact.each do |e| %>
           <%= render partial: 'card', locals: {event: e} %>
           <% end %>
         </div>
         <% end %>
+    <% end %> <!-- end if -->
     </div>
 
     <br>
