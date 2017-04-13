@@ -1,3 +1,5 @@
+@import 'variables';
+
 /*
  * Style tweaks
  * --------------------------------------------------
@@ -37,7 +39,7 @@ body {
 
 /* -------------------------------------------------- */
 .main-color h1 {
-	color: #28B463;
+	color:$color_button_success;
 	font-weight: normal;
 	font-size: 350%;
 	margin-top: 1rem;
@@ -103,4 +105,68 @@ body {
 /* to verwrite the color of the container set in the application.scss */
 .carousel .container {
 	background: none !important;
+}
+
+
+.navbar-brand {
+	font-size: 2rem;
+}
+.navbar-brand span {
+	color: $color_button_success_light;
+}
+.navbar-brand img {
+	height: 50px;
+	width: 50px;
+}
+.navbar-toggler {
+	margin-top: .5rem;
+	color: $color_button_success !important;
+}
+.navbar-toggler-icon {
+	background-image: url('hamburger.svg') !important;
+}
+
+.dropdown-toggle:after {
+	color: $color_button_success !important;
+}
+
+
+//HOW IT WORKS ICONS
+.instruction_cover {
+	min-height: 450px;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.spotlight span{
+	display: flex;
+	width: 100px;
+	height: 100px;
+	justify-content: center;
+	align-items: center;
+	background-color: $color_button_success;
+	border-radius: 50%;
+	margin: auto;
+}
+.spotlight i {
+	font-size: 3.5rem;
+}
+
+
+
+
+///footer credits
+
+footer span {
+	font-size: 0.7rem;
+}
+
+footer {
+	display: block;
+	color: $color_font;
+	height: 100px;
+	width: 100%;
+	text-align: center;
 }
