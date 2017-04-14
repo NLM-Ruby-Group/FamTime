@@ -52,10 +52,10 @@
     <br>
     <br>
     <br>
-      <% if @events.nil? %>
+      <% if @upcoming_events.nil? %>
         <h2> No events at the moment</h2>
       <% else %>
-        <% @events.in_groups_of(3) do |g| %>
+        <% @upcoming_events.in_groups_of(3) do |g| %>
         <div class="row no-gutters">
           <% g.compact.each do |e| %>
           <%= render partial: 'card', locals: {event: e} %>
