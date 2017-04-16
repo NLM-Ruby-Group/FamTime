@@ -1,0 +1,83 @@
+<div class='col-12 col-lg-6'>
+  <div class="card card-event">
+    <div class="card-top" style='background:url(<%= event.image[0].url %>)'>
+    <!-- display user icon that links to his profile -->
+     <a class='card-user-icon' href='<%= user_path(id: event.user.id)%>'>
+        <img src='<%= event.user.photo.blank? ? default_user_image :  event.user.photo %>'> 
+     </a>
+      <!-- add registration button -->
+      
+      <% if event.ends_at < Time.now %>
+        <%# if the event is in the past display expired %>
+          <button type="button" class="btn btn-warning card-event-button">Expired </button>
+      <%elsif event.attendees.count == event.max_participants %>
+        <%# if the event is full display full %>
+          <button type="button" class="btn btn-warning card-event-button">Full </button>
+      <% else %>
+         <%#if the current user is the creator dont display the registration button%>
+      <% unless event.user == current_user %>
+        <% if event.attendees.include?(current_user) %>
+        <%= link_to "Cancel", registration_path(id: event.registrations.where(user_id: current_user.id).ids), :method => :delete, class:'btn btn-danger card-event-button', data: {confirm: 'Are you sure you want to cancel your participation?'} %>
+        <% else %>
+        <%# if there s a user display button to register, otherwise link the user to login in%>
+            <% if current_user  %>
+              <%= link_to "Going?", registrations_path(:event_id => event[:id], :user_id => current_user[:id]), :method => :post, class:'btn btn-primary card-event-button' %>
+            <% else %>
+              <%= link_to "Going?", new_session_path,class:'btn btn-primary card-event-button'%>
+            <% end %>
+        <% end %> <!-- end unless -->
+      <% else %>
+        <button type="button" class="btn btn-success card-event-button">Your event </button>
+      <% end %>
+
+      <% end %>
+     
+      
+      <span class='card-event-price'> 
+        <%= number_to_currency(event.price, unit: 'VND ', precision: 0) %>
+      </span>
+    </div> <!-- end card-top -->
+
+    <%= link_to event_path(event) do %>
+    <div class="card-bottom">
+    
+      <div class="card-info-1">
+        <h1> <%= event.name %></h1>
+        
+    
+      </div> <!-- end card info 1 -->
+
+      <div class="card-info-2">
+      <h3>
+          <span>
+            <i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+            <span><%= event.starts_at.strftime("%b%e")%>--<%= event.ends_at.strftime("%b%e") %>
+          </span>
+          </h3>
+      <p> 
+       <!-- create a link to gmaps -->
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <a href='http://maps.google.com/?q= <%= event.place.address %>'> 
+          <%= event.place.address %> 
+          </a>
+        </p>
+          
+        <p> 
+          <span><i class="fa fa-users" aria-hidden="true"></i></span>
+          <span><%= event.min_participants %> -- <%= event.max_participants %></span>
+        </p>
+         <p> 
+          <span><i class="fa fa-user" aria-hidden="true"></i></span>
+          <span> <%= event.attendees.count %>  Attendees</span>
+        </p>
+         
+      </div>
+    </div> <!-- end card-bottom -->
+  
+  </div> <!-- end card -->
+
+    <% end %>
+
+</div>
+
+

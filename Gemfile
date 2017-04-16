@@ -31,11 +31,16 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 
-gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'font-kit-rails', '~> 1.2.0'
-
+gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-aws'
+gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
+gem 'client_side_validations'
+gem 'twilio-ruby', '~> 4.11.1'
+#gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -57,3 +62,4 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+

@@ -3,12 +3,23 @@
   <head>
     <title>FamTime</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'  %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <%= favicon_link_tag "FamTimeLogo.png" %>
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>
+    <%= flash_messages %>
     <%= yield %>
+        <footer>
+          <hr class="featurette-divider">
+          <p>&copy; 2017 FamTime Dev Team.</p>
+          <span><div>LOGO made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div></span>
+        </footer>    
   </body>
 </html>
+

@@ -1,0 +1,206 @@
+@import "variables";
+@import "bootstrap";
+@import "home.scss";
+@import "cards.scss";
+@import "phone_numbers";
+@import "form";
+@import "font-awesome";
+.featurette-divider {
+  margin: 1rem 0;
+  /* Space out the Bootstrap <hr> more */
+}
+html,body {
+  height: 100%;
+}
+body {
+  background-color: $color_background;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.container {
+  padding-top: 1rem;
+  min-height: 90%;
+}
+
+* {
+  color: $color_font;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+//style client side validation errors
+.message {
+  color: red;
+  display: inline;
+}
+
+///EVENT AND PLACE  INDEX PAGE
+.event-buttons {
+  margin-bottom: 1rem;
+}
+.event-buttons .btn-group {
+  margin-bottom: 1rem;
+}
+#event-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+[id*='arousel'] .carousel-item {
+  height: 80vh;
+}
+
+[id*='arousel'] .carousel-item img{
+  height: 100%;
+  background-position: center !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+[id*='arousel'] h1 {
+  margin-bottom: 20%;
+  font-weight: 900;
+  text-shadow: 0px 0px 3px #000;
+  text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
+  color: $color_background;
+}
+
+[id*='arousel'] .btn {
+  box-shadow: 0px 0px 3px #000;
+}
+
+
+
+
+///EVENT AND PLACE SHOW PAGE
+.user-icon img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+//select both event and place banner
+[id$="banner"]{
+  margin-bottom: 5rem;
+}
+[id$='banner']{
+  width: 100%;
+  height: 80vh;
+}
+
+[id$="banner"] div {
+  background-position: center !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+//select both place and event details
+[id$='details'] {
+  margin-bottom: 3rem;
+}
+[id$="details"] img {
+  max-width: 300px;
+  height: auto;
+}
+//STYLE THE H3 WITH AN UNDERLINE 
+[id$='details'] h3,
+[id$='additional-info'] h3 {
+  margin-top: 2rem;
+  display: inline-block;
+  line-height: 1rem;
+}
+[id$='details'] h3:after,
+[id$='additional-info'] h3:after 
+{
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: .25rem;
+  background-color: $color_button_success;
+}
+
+[id$='details'] p{
+  padding-right: 7rem;
+}
+
+[id$='details'] h1 {
+  margin-top: 3rem;
+  color: $color_button_success;
+  font-size: 4rem;
+} 
+
+
+//USER VERIFIED ICON 
+.fa-check {
+  color: #5CB85C;
+}
+
+///STYLE BUTTON COLORS
+.btn-success {
+  background-color: $color_button_success;
+}
+
+.btn-succes:hover {
+  background-color: $color_button_success_light;
+}
+.btn-outline-success:hover {
+  background-color: $color_button_success_light;
+}
+.btn-outline-success {
+  border: 1px solid $color_button_success !important; 
+}
+
+.btn-info {
+  background-color: $color_button_info;
+}
+
+.btn-info:hover {
+  background-color: $color_button_info_light;
+}
+
+.btn-primary {
+  background-color: $color_button_primary;
+}
+
+.btn-primary:hover {
+  background-color: $color_button_primary_light;
+}
+
+.btn-danger {
+  background-color: $color_button_danger;
+}
+
+.btn-danger:hover {
+  background-color: $color_button_danger_light;
+}
+
+
+.btn {
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0) !important;
+  outline: 1px solid !important;
+  outline-color: rgba(255, 255, 255, .5) !important;
+  outline-offset: 0px !important;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+.btn:hover {
+  cursor: pointer !important;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2) !important;
+  outline-offset: 15px !important;
+}
+
+
+

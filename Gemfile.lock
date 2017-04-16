@@ -42,12 +42,31 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (6.7.7)
       execjs
+    aws-sdk (2.8.9)
+      aws-sdk-resources (= 2.8.9)
+    aws-sdk-core (2.8.9)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.8.9)
+      aws-sdk-core (= 2.8.9)
+    aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
     builder (3.2.3)
     byebug (9.0.6)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+    carrierwave-aws (1.1.0)
+      aws-sdk (~> 2.0)
+      carrierwave (>= 0.7, < 2.0)
+    client_side_validations (9.1.0)
+      jquery-rails (~> 4.2)
+      js_regex (~> 1.2)
+      rails (>= 5.0.0.1, < 5.2)
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -60,6 +79,10 @@ GEM
     debug_inspector (0.0.2)
     diff-lcs (1.3)
     docile (1.1.5)
+    dotenv (2.2.0)
+    dotenv-rails (2.2.0)
+      dotenv (= 2.2.0)
+      railties (>= 3.2, < 5.1)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -88,11 +111,15 @@ GEM
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
+    jmespath (1.3.1)
     jquery-rails (4.2.2)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    js_regex (1.2.2)
+      regexp_parser (>= 0.3.6, <= 0.5.0)
     json (1.8.6)
+    jwt (1.5.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -154,6 +181,7 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     rdoc (4.3.0)
+    regexp_parser (0.4.3)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -211,6 +239,10 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
+    twilio-ruby (4.11.1)
+      builder (>= 2.1.2)
+      jwt (~> 1.0)
+      multi_json (>= 1.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.1.8)
@@ -229,9 +261,13 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bootstrap (~> 4.0.0.alpha5)
+  bootstrap (~> 4.0.0.alpha6)
   byebug
+  carrierwave (~> 1.0)
+  carrierwave-aws
+  client_side_validations
   coffee-rails (~> 4.1.0)
+  dotenv-rails
   font-awesome-rails
   font-kit-rails (~> 1.2.0)
   guard-rspec
@@ -248,8 +284,9 @@ DEPENDENCIES
   simplecov (~> 0.12.0)
   spring
   turbolinks (~> 5)
+  twilio-ruby (~> 4.11.1)
   uglifier (>= 1.3.0)
   web-console
 
 BUNDLED WITH
-   1.14.3
+   1.14.5

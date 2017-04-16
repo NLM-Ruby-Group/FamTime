@@ -1,0 +1,140 @@
+@import "variables";
+
+
+.card {
+  font-size: .8rem;
+  margin-top: 1rem;
+  -webkit-box-shadow: 3px 5px 13px -5px $color_button_success;
+  -moz-box-shadow: 3px 5px 13px -5px $color_button_success;
+  box-shadow: 3px 5px 13px -5px $color_button_success;
+}
+.card h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: $color_button_success;
+}
+.card a {
+  color: $color_font;
+}
+.card:hover .card-bottom {
+  background-color: transparentize($color_font,.8);
+  -webkit-box-shadow: 5px 10px 18px -5px $color_button_success;
+  -moz-box-shadow: 5px 10px 18px -5px $color_button_success;
+  box-shadow: 5px 10px 18px -5px $color_button_success;
+}
+.card-top { 
+  height: 300px;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+}
+.card-img-top {
+  max-height: 300px;
+  width: 100%;
+}
+.card-user-icon, .card-event-price, .card-event-button {
+  position: absolute;
+}
+
+.card-event-button {
+  right: 0;
+  bottom: 0;
+  color: $color_font_light !important;
+  border: 1px solid $color_font_light;
+}
+
+.card-event-price {
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  background-color: transparentize($color_font,.5);
+  color: $color_font_light;
+}
+
+
+//user icon on the cards 
+.card-user-icon {
+  position: absolute;
+  bottom: .5rem;
+  left: 1rem;
+  display: block;
+  width: 60px;
+  
+  }
+.card-user-icon img {
+  width: 60px;
+  height: 60px;
+  border: 1px solid $color_font_light;
+  border-radius: 50%;
+}
+
+
+.card-bottom{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-info-2 * {
+  display:flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+} 
+.card i {
+  font-size: 1.5rem;
+  margin-right: .5rem;
+}
+
+.card-info-1 {
+  flex-direction: row;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+
+///PLACE SHOW/ EVENT SHOW
+.place-container .row,.event-container .row {
+  margin-top: 2rem;
+}
+.place-container img, .event-container img {
+  width: 100%;
+}
+
+
+
+
+//style comment cards
+#comment-form-card{
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+} 
+#comment-form-card input {
+  border: none !important;
+  width: auto;
+  display: inline;
+}
+
+
+#comment-form-card.card-description {
+  margin-top: 2rem;
+}
+#comment-form-card .btn {
+  margin-top: 1rem;
+}
+
+.comment-display-card {
+  margin-top: 2rem;
+  height: auto;
+  padding: 1rem !important;
+}
+
+
+
+
+///STYLE RATINGS
+
+.star-icon {
+  width: 30px ;
+}

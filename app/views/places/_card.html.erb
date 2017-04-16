@@ -1,0 +1,27 @@
+<div class='col-12 col-lg-6'>
+  <%= link_to place_path(place) do %>
+
+  <div class="card">
+    <img class="card-img-top" src="<%= place.image[0].url %>">
+    <div class="card-block card-bottom">
+        <h1 class="card-title"> 
+          <%= place.name %> <br>
+        </h1>
+      <br>
+      <h6 class="card-subtitle">
+         <i class="fa fa-map-marker" aria-hidden="true"></i>
+        <%= place.address %>
+        <br> <br>
+         <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        <%= place.opening_hours.strftime("%H:%M") %> - <%= place.closing_hours.strftime("%H:%M") %>
+      </h6>
+      <br>
+      <!-- descrption visible only on the show page
+      <p class="card-text">
+      <%= place.description %>
+      </p> -->
+
+    </div> <!-- end card-block -->
+  </div> <!-- end card-->
+  <% end%>
+</div> <!-- end col -->

@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>You created <%= @events.count %> Events</h1>
+
+  <div class="row">
+    <% @events.each do |g| %>
+      <%= render partial: 'card_mine', locals: {event:g} %>
+    <% end  %>
+  
+  </div>
+
+</div>

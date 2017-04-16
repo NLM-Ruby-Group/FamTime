@@ -1,0 +1,24 @@
+<%= render 'places/carousel'%>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+    <% if @places.empty? %>
+    
+      <h3>  Sorry,there are no locations available, but you can start by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%> </h3>
+    </div>
+      
+    <% else %>
+    <div class="col-12">
+      <h3>There are currently <%= @places.size %> locations available.You can help us by <%= link_to "adding a new location", new_place_path, class: 'btn btn-outline-success'%></h3>
+    </div>
+    <% end %>
+    </div> <!-- end row -->
+
+    <div class="row">
+      <% @places.each do |g| %>
+        <%= render partial: 'card', locals: {place:g} %>
+    <% end %>
+    </div> <!-- end row -->
+    
+  </div> <!-- end container -->
+

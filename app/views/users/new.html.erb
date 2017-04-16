@@ -1,0 +1,35 @@
+<div class="container form">
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1>Join the FamTime Community</h1>
+  <hr>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.size > 0 %>
+      <div class="alert alert-danger">
+        <%= @user.errors.full_messages.to_sentence %>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control'%>
+    </div>
+    <%= f.submit "Sign Up", class: 'btn btn-success' %>
+  <% end %>
+
+  <p> Already have an account? <%= link_to 'Sign in!', new_session_path %> </p>
+</div>
+
